@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0">
+        <meta name="author" content="Savannah Raley">
+        <title>Fringe Salon</title>
+
+        <link href="style.css" rel="stylesheet">
+      </head>
+
+      <body>
+        <header>
+            <h1 class="sr-only">Fringe Salon</h1> <!-- will be hidden -->
+
+            <img id="header-logo" src="Images\Logos_Icons\Fringe_Logo_white.svg" alt="Fringe salon logo">
+
+            <nav>
+                <h2 class="sr-only">Main Navigation</h2> <!-- will be hidden -->
+                <div class="nav-wrapper">
+                    <!-- Hidden Checkbox -->
+                    <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+                    
+                    <!-- Label acts as the button -->
+                    <label for="menu-toggle" class="menu-button">
+                        <img src="Images/Logos_Icons/icons8-hamburger-menu-50(1).png" alt="Menu">
+                    </label>
+            
+                    <!-- Dropdown Menu -->
+                    <div class="dropdown">
+                        <ul class="nav-links">
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="schedule.html">Schedule Session</a></li>
+                            <li><a href="#gallery">Gallery</a></li>
+                            <li><a href="apply.html">Apply Now</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                        <ul class="social-links">
+                            <li>
+                                <a href="https://www.instagram.com/fringesalonwr?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Visit Fringe Salon on Instagram">
+                                    <img src="Images/Logos_Icons/icons8-instagram-100.png" alt="Instagram">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/fringesalonwr/" aria-label="Visit Fringe Salon on Facebook">
+                                    <img src="Images/Logos_Icons/icons8-facebook-100.png" alt="Facebook">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section id="hero">
+                <h2>Modern sophistication, <span>timeless style</span></h2> 
+                <p>Get that classic, high-end salon experience.</p>
+            </section>
+
+            <section id="services">
+                <div>
+                    <h2>Services.</h2>
+                    <p>We’re more than just a set of shears.</p>
+                </div>
+
+                <ul id="services-ul">
+                    <li>Waxing</li>
+                    <li>Makeup</li>
+                    <li>Boutique </li>
+                    <li>Hair</li>
+                </ul>
+
+                <section id="specialties">
+                    <h3>Specialties</h3>
+
+                    <ul>
+                        <li>Highlights</li>
+                        <li>Keratin smoothing</li>
+                        <li>Ombre technique</li>
+                        <li>Corrective color</li>
+                        <li>Chemical straightening</li>
+                        <li>Balayage</li>
+                        <li>Permanent waves</li>
+                        <li>Extensions</li>
+
+                    </ul>
+                </section>
+
+                <div id="services-img-container">
+                </div>
+
+                <div id="services-link-group">
+                    <p>
+                        Once your look is complete, your stylist will provide precise after-care instructions so you can maintain that look for as long as possible.
+                    </p>
+    
+                    <a id="schedule" href="schedule.html">Book now</a>
+    
+                    <p>Free Wi-Fi, coffee, and snacks are available during your visit.</p>
+                </div>
+            </section>
+
+            <section id="about">
+                <h2 class="sr-only">About</h2> <!--will be hidden-->
+                <section id="defines">
+                    <h3>What defines us.</h3>
+
+                    <p>
+                        Locally operated and owned by women, we excel at bringing big city glamor straight into the heart of Middle Georgia. 
+                    </p>
+                        
+                    <p>
+                        Our team proudly features stylists who have up to 20+ years of experience. All of our stylists continue to take classes and workshops so that they can stay on top of the latest trends in all things beauty and ensure you stay looking at the top of your game.
+                    </p>
+                </section>
+                
+                <section id="brands">
+                    <div id="brands-img-container">
+                    </div>
+                   <div id="brands-text-container">
+                        <h3>Brands we trust.</h3>
+                        <p>Professional service, professional products. Our stylists use only the most select hair products, trusted by stylists across the country</p>
+
+                        <ul> <!--spans will hold decorative lines-->
+                            <li>Aquage <span class="h-line"></span></li>
+                            <li>Wella <span class="h-line"></span></li>
+                            <li>Moroccan Oil <span class="h-line"></span></li>
+                           <li>GK Products <span class="h-line"></span></li>
+                            <li>Colorproof <span class="h-line"></span></li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+
+            <section id="testimonial">
+                <h2 class="sr-only">Customer Review</h2> <!--will be hidden-->
+                <!--this div will place the quote beside the quotation mark image-->
+                <div id="quote">
+                    <img src="Images\Logos_Icons\quote_mark.svg" role="presentation"> 
+                    <blockquote>
+                        I couldn’t be happier with Fringe Salon. They are so professional and their service is the best in Warner Robins.
+                    </blockquote>
+                </div>
+                <p>Ammy Pearson, <span>Facebook Review</span></p>
+            </section>
+
+            <section id="gallery">
+                <h2>Instagram gallery.</h2>
+                <!--script importing the instagram embed-->
+                <script src="https://static.elfsight.com/platform/platform.js" async></script>
+                <div class="elfsight-app-7941814e-d50e-4f12-ba11-6711a8ee0319" data-elfsight-app-lazy></div>
+            </section>
+        </main>
+
+        <footer>
+            <img src="Images\Logos_Icons\Fringe_Logo.svg" alt="Fringe salon logo">
+
+            <section id="contact">
+                <h2>Contact us.</h2>
+                <p>Reach out with any comments or questions</p>
+
+                <form>
+                    <label for="name">Name<span class="required">*</span></label>
+                    <input type="text" name="name" id="name" autocomplete="given-name" placeholder="Your Name" required>
+    
+                    <label for="email">Email<span class="required">*</span></label>
+                    <input type="email" name="email" id="email" autocomplete="email" placeholder="Email Address" required>
+    
+                    <div id="comm">
+                        <label for="comments">Message us<span class="required">*</span></label>
+                        <input type="textarea" name="comments" id="comments" placeholder="Tell us whats on your mind" required>
+                    </div>
+                    <input type="submit" name="mySubmit" id="mySubmit" value="Submit" class="bttn-style">
+                </form>
+            </section>
+
+            
+            <div id="footer-bottom">
+                <section id="socials">
+                    <h2>Socials</h2>
+                    <ul>
+                        <li>
+                            <a href="https://www.instagram.com/fringesalonwr?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Visit Fringe Salon on Instagram">
+                                <img src="Images\Logos_Icons\icons8-instagram-100.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/fringesalonwr/" aria-label="Visit Fringe Salon on Facebook">
+                                <img src="Images\Logos_Icons\icons8-facebook-100.png">
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+    
+                <section id="address">
+                    <h2>Address</h2>
+                    <address>
+                        1806 Russell Pkwy <br>
+                        Suite 500 <br>
+                        Warner Robins , GA 31088 <br>
+                    </address>
+                </section>
+    
+                <section id="contact_info">
+                    <h2>Contact info</h2>
+                    <address>
+                        Main: (478) 208-4053 <br>
+                        Mobile: (478) 225-9946 <br>
+                        <a href="mailto:cassiebandy@gmail.com">cassiebandy@gmail.com</a> <br>
+                    </address>
+                </section>
+    
+                <section id="hours">
+                    <h2>Business hours</h2>
+    
+                    <dl>
+                        <dt>Tue-Sat</dt>
+                        <dd>9am-7pm</dd>
+                        <dt>Mon</dt>
+                        <dd>Closed</dd>
+                        <dt>Sun</dt>
+                        <dd>Closed</dd>
+                    </dl>
+    
+                    <p>Walk-ins welcomed when availability allows.</p>
+                    <p>Hours vary for each stylist.</p>
+                </section>
+    
+                <section id="payment">
+                    <h2>Accepted payment</h2>
+    
+                    <ul>
+                        <li>Visa</li>
+                        <li>Mastercard</li>
+                        <li>American Express</li>
+                        <li>Discover</li>
+                        <li>Cash</li>
+                        <li>Personal check</li>
+                    </ul>
+                </section>
+    
+                <nav id="site-nav">
+                    <h2>Navigation</h2>
+    
+                    <ul>
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="#About">About</a></li>
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <li><a href="#Instagram">Gallery</a></li>
+                        <li><a href="apply.html">Apply Now</a></li>
+                        <li><a href="#Contact">Contact</a></li>
+                    </ul>
+                </nav>
+    
+
+                <nav id="policies-nav">
+                    <h2>Policies</h2>
+                    <ul>
+                        <li><a href="https://policies.hibuwebsites.com/privacy-policy" target="_blank">Privacy Policy</a></li>
+                        <li><a href="https://policies.hibuwebsites.com/cookie-policy" target="_blank">Do Not Share My Information</a></li>
+                        <li><a href="https://policies.hibuwebsites.com/conditions-of-use" target="_blank">Conditions of Use</a></li>
+                        <li> <a href="https://policies.hibuwebsites.com/infringement-policy" target="_blank">Notice and Take Down Policy</a></li>
+                        <li><a href="https://policies.hibuwebsites.com/accessibility-statement" target="_blank">Website Accessibility Policy</a> </li>
+                    </ul>
+                </nav>
+    
+                <div id="copywrite">
+                    <small>&copy; 2025 The content on this website is owned by us and our licensors. Do not copy any content (including images) without our consent.</small>
+                        
+                    <button>
+                        <img src="Images\Logos_Icons\up-arrow-svgrepo-com.svg">
+                    </button>
+                </div>
+            </div>
+        </footer>
+      </body>
+</html>

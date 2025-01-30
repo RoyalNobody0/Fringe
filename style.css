@@ -1,0 +1,670 @@
+/* Author: Savannah Raley
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html{
+    box-sizing: border-box;
+    overflow-x: hidden;
+    
+}
+
+/* FONT IMPORT */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* GLOBAL VARIABLES */
+
+:root {
+    --header-font: "Playfair Display", serif;
+    --main-font: "Roboto Condensed", sans-serif;
+    --main-header-size: 2rem;
+    --sub-header-size: 1.7rem;
+    --emphasis-text-size: 1.3rem;
+    --regular-text-size: 1rem;
+    --light-text: #e3dfd4;
+    --dark-text: #2e2e38;
+    --light-bg: #e3dfd4;
+    --dark-bg: #2e2e38;
+    --green-accent: #747567;
+    --gold-accent: #9e8c68;
+    --dark-green: #333b2b;
+}
+
+/* GENERAL STYLES */
+
+
+section, 
+footer{
+    padding: 25px 15px;
+    line-height: 1.1;
+}
+
+h1, 
+h2,
+h3{
+    font-size: var(--main-header-size);
+    font-family: var(--header-font);
+    text-transform: capitalize;
+    padding-bottom: 10px;
+}
+
+h3{
+    font-size: var(--sub-header-size);
+    font-family: var(--header-font);
+    text-transform: capitalize;
+}
+
+p, 
+nav, 
+ul, 
+form{
+    font-family: var(--main-font);
+    font-size: var(--regular-text-size);
+}
+
+/* temp  */
+
+body{
+    background-color: var(--light-bg);
+
+}
+/* Utility Classes */
+.sr-only {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    }
+
+
+
+/* NAVBAR STYLING */
+
+header{
+    position: absolute; /* Lets hero image show through navbar */
+    width: 100vw; /* keeps it same width as screen */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: transparent;
+    border-bottom: 1px solid var(--light-bg);
+    padding: 10px ;
+}
+
+#header-logo{
+    height: 50px;
+}
+
+.nav-wrapper {
+    position: relative;
+    grid-row-start: 1;
+}
+
+/* Hide checkbox */
+.menu-checkbox {
+    display: none;
+}
+
+/* Style for the menu button */
+.menu-button {
+    position: absolute;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+/* Style for the dropdown */
+.dropdown {
+    position: absolute;
+    top: 60px;
+    right: -200%; /* Start off-screen */
+    width: 50vw; 
+    height: 100vh; /* Full height */
+    background: rgba(46, 46, 56, 0.9);
+    box-shadow: -2px 10px 5px 0px rgba(0,0,0,0.20);
+    transition: right 0.3s ease-in-out;
+    z-index: 999;
+    display: grid;
+    padding: 10px 30px 10px 10px;
+    grid-template-rows: 50px 2fr 1fr;
+}
+
+/* Make dropdown visible when checkbox is checked */
+.menu-checkbox:checked ~ .dropdown {
+    right: -30px; /* Slide in */
+}
+
+/* Makes it so that the header bg matches the dropdown's when clicked */
+header:has(.menu-checkbox:checked){
+    background-color:rgba(46, 46, 56, 0.9);;
+}
+
+/* Navigation links styling */
+.nav-links {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    grid-row-start: 2;
+}
+
+.nav-links li {
+    border-bottom: 1px solid var(--light-bg);
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: var(--main-header-size);
+    font-weight: bold;
+    transition: color 0.2s;
+    color: var(--light-text);
+}
+
+
+/* Social Links */
+.social-links {
+    height: fit-content;
+    width: fit-content;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    grid-row-start: 3;
+}
+
+.social-links li{
+    border: 1px solid var(--light-bg);
+}
+
+.social-links img {
+    padding: 15px;
+    width: 50px;
+    height: 50px;
+}
+
+
+
+/* HERO SECTION  */
+
+#hero{
+    height: 250px;
+    background:  /* gradient helps text stand out against image */
+        linear-gradient(90deg, rgba(31, 32, 32, 0.438) 5%, rgba(216, 216, 217, 0) 76%),
+        url('Images/hero.jpg');
+    background-position: 15%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 100px;
+    color: var(--light-text);
+}
+
+#hero h2, 
+#hero p{
+    width: 50vw;
+    max-width: 200px;
+}
+
+#hero span{
+    font-size: var(--sub-header-size);
+}
+
+#hero p{
+    padding-top: 10px;
+    font-family: var(--header-font);
+    font-size: 1.5rem;
+}
+
+
+/* SERVICES SECTION  */
+
+#services{
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 50px 1fr 1fr;
+    grid-gap: 10px;
+}
+
+
+#services-img-container{
+    grid-row: 1 / span 2; /* positioning img container in grid */
+    grid-column: 2;
+    width: 100%;
+    background-image: url('Images/services.jpg'); /*placing image in container */
+    background-size: cover;
+    background-position: center;
+}
+
+#services h2 + p{
+    font-family: var(--header-font);
+}
+
+/* Services Main List */
+
+/* Positioning */
+#services-ul{
+    position:absolute; /* absolute positioning so it can overlap the picture */
+    width: 60vw; /* responsive width */
+    top: 575px;
+}
+
+/* List styling */
+#services-ul li{
+    color: var(--light-text);
+    font-size: var(--emphasis-text-size);
+    background-color: var(--green-accent);
+    border: 1px solid var(--dark-green);
+    text-align: center;
+    margin: 10px;
+    padding: 10px; 
+}
+
+/* Specialties List  */
+
+/* Positioning */
+#specialties{
+    grid-row: 3;
+    grid-column: 1 / span 2; /* spans across screen */
+    border: 1px solid var(--green-accent);
+    margin: 75px 0 25px 0;
+    padding: 10px 10px 10px 20px;
+}
+
+#specialties h3{
+    font-size: var(--emphasis-text-size);
+}
+
+/* Creates a grid for the list so it has two columns  */
+#specialties ul{
+
+    list-style-type: circle;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    color: #333b2b;
+    column-gap: 10px;
+    row-gap: 5px;
+    /* keeps list centered for responsivness */
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Services Bottom Group Styling */
+#services-link-group{
+    grid-row-start: 4; /* positioning at bottom of section */
+    grid-column: 1 / span 2; /*stretches across page */
+    display: grid; /* creates a 2x2 grid for it's elements to sit in */
+    grid-template-columns: 1fr 170px;
+    grid-template-rows: 170px .5fr;
+    row-gap: 10px;
+    column-gap: 10px;
+    /* keeps sectioned centered and a reasonable size for resposnivness  */
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* "Book Now" button styling  */
+#services a{
+    max-width: 150px; /*stops growth before image scales too much */
+    display: flex; /* flex for text positioning */
+    margin-left: 20px;
+    align-items: center;
+    justify-content: center;
+    background-image: url('Images/Logos_Icons/schedule_button.svg'); /*adds image to link */
+    background-size: cover; /* sizing and centering image */
+    background-repeat: no-repeat; /* sizing and centering image */
+    background-position: center; /* sizing and centering image */
+    font-size: var(--emphasis-text-size);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--gold-accent);
+
+}
+
+#services-link-group p{
+    align-self: center;
+}
+
+#services-link-group a + p{ /* styles the text about provided amnenities */
+    text-align: center;
+    font-size: .8rem;
+    grid-column: span 2; /* stretches across screen */
+}
+
+
+/* ---ABOUT SECTION---  */
+
+#about{
+    padding: 0; /*lets bg image stretch across page */
+    background-color: var(--dark-bg);
+    color: var(--light-text)
+}
+
+
+/* Defines Section */
+
+#defines{
+    background: 
+        linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* dark overlay to help with text visibility */
+        url('Images/defines_img.jpg'); /* image */
+    background-size: cover;
+    background-position-y: bottom;
+    /* min-height: 300px; */
+}
+
+#defines h3{
+    margin-top: 50px; /* Centers content */
+}
+
+#defines p{
+    margin-bottom: 10px; /*places some space between the paragraphs */
+}
+
+
+/* Brands Section  */
+
+#brands h3{
+    width: 130px; /* keeps heading at 2 lines */
+}
+
+#brands{
+    display: grid;
+    grid-template-rows: .5fr 1fr; /* creates grid so that the image container has something to stretch to */
+}
+
+
+#brands-img-container{ /* responsive bg image that crops itself */
+    background-image: url('Images/brands_img.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 75%;
+    height: 75%;
+    margin: 0 auto; /* centers image */
+    align-self: end; /* places image at bottom of grid cell so it overlaps with the h3 */
+
+
+}
+
+#brands-text-container{ /* overlaps text slightly with the image */
+    position: relative;
+    top: -30px;
+}
+
+#brands-text-container p{
+    margin-bottom: 15px;
+}
+
+#brands-text-container li{ /* brands list styling */
+    font-family: var(--header-font);
+    font-size: var(--emphasis-text-size);
+    padding: 15px 10px;
+    display: flex; /* places the span beside the text after we change it to a block element */
+    align-items: center; /* places span at vertical center */
+    white-space: nowrap; /* ensures span element stops at the end of the brand name and doesn't linebreak it */
+}
+
+#brands-text-container span{ /* turnng the span element into a horizontal line */
+    display: block;
+    width: 100%;
+    height: 0;
+    border: 1px solid var(--light-bg);
+    margin-left: 10px;
+}
+
+/* ---TESTIMONIAL--- */
+
+#testimonial{ /* styling section */
+    font-size: var(--emphasis-text-size);
+    background-color: var(--green-accent);
+    border: 3px solid var(--dark-green);
+    border-left: none;
+    border-right: none;
+    color: #e3dfd4;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* creates 2x2 grid */
+}
+
+#quote{ /* styling the customer's quote */
+    font-size: var(--emphasis-text-size);
+    grid-column: span 2; /* stretches across entire grid */
+    display: flex; /* places the quote mark image beside the text */
+    align-items: start;
+    margin: 25px auto;
+    max-width: 500px; /* keeps it from stretching too far at larger sizes */
+}
+
+#quote img{ /* makes the quote mark smaller */
+    width: 50px;
+    padding-right: 10px;
+}
+
+#testimonial div + p{ /* keeps the quote attribution from stretching too wide at larger sizes */
+    margin: 0 auto;
+    max-width: 200px;
+}
+
+/* ---GALLERY---  */
+
+#gallery{ /* making sure the gallery embed is centered */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#gallery h2{
+    width: 130px; /* keeps heading at 2 lines */
+    align-self: flex-start; /* putting it back to the left */
+}
+
+
+/* ---FOOTER--- */
+
+footer{
+    padding-top: 50px;
+    margin-top: 50px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    display: flex;
+    flex-direction: column;
+    font-family: var(--main-font);
+}
+
+/* Contact section  */
+
+#contact h2,
+#contact h2 + p{ /* hides the title and subtitle but keeps them acessible */
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+footer img:first-child{ /*places salon logo center */
+    width: 100px;
+    align-self: center;
+}
+
+/* Form */
+
+form,
+#comm{
+    display: flex;
+    flex-direction: column;
+}
+
+form label{
+    padding: 15px 0 5px 0;
+}
+
+#comm{
+    margin-bottom: 50px;
+}
+
+form input{
+    height: 30px;
+    background-color: var(--light-bg);
+}
+
+#comm input{
+    height: 100px;
+}
+
+input[type="submit"]{
+    height: 50px;
+    background-color: var(--gold-accent);
+    border: none;
+    color: var(--light-text);
+    font-size: var(--emphasis-text-size);
+    text-transform: uppercase;
+}
+
+/* Footer Bottom */
+
+#footer-bottom{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#footer-bottom nav{
+    padding:25px 15px ;
+}
+
+#footer-bottom a{
+    color: #a7a49e;
+}
+
+#footer-bottom h2{
+    font-family: var(--main-font);
+    font-size: var(--regular-text-size);
+}
+
+footer nav li{
+    padding: 5px 0;
+}
+
+address,
+footer dl,
+footer ul,
+#hours p,
+small{
+    color: #a7a49e;
+    line-height: 1.2rem;
+    font-size: .8rem;
+}
+
+
+/* Socials  */
+
+#socials{
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-between;
+}
+
+#socials h2{
+    font-family: var(--header-font);
+    font-size: var(--main-header-size);
+}
+
+#socials ul{
+    display: flex;
+    padding-right: 30px;
+}
+
+#socials img{
+    width: 50px;
+}
+
+/* Address  */
+address{
+    line-height: 1.2rem;
+}
+
+/* Business hours */
+#hours dl{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Site Navigation  */
+
+#site-nav{
+    grid-column: 2;
+}
+
+/* Legal Section  */
+
+#policies-nav{
+    grid-column: 1;
+    grid-row: 4;
+}
+
+#copywrite{
+    display: flex;
+    padding: 15px;
+    margin: 0;
+    grid-column: span 2;
+    align-items: center;
+}
+
+footer button{
+    padding: 0 10px;
+    background-color: transparent;
+    border: 1px solid var(--gold-accent);
+}
+
+

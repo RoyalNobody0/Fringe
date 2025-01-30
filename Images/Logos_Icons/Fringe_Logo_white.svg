@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 183.45 119.76">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: PlayfairDisplay-Regular, 'Playfair Display';
+        font-size: 60px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-family: RobotoCondensed-Light, 'Roboto Condensed';
+        font-size: 48px;
+        font-weight: 300;
+      }
+
+      .cls-3 {
+        letter-spacing: 0em;
+      }
+
+      .cls-4 {
+        letter-spacing: -.03em;
+      }
+    </style>
+  </defs>
+  <text class="cls-1" transform="translate(0 51.24)"><tspan x="0" y="0">Fri</tspan><tspan class="cls-3" x="78.42" y="0">ng</tspan><tspan x="144.72" y="0">e</tspan></text>
+  <text class="cls-2" transform="translate(17.24 98.52)"><tspan x="0" y="0">SA</tspan><tspan class="cls-4" x="51.14" y="0">L</tspan><tspan x="71.88" y="0">ON</tspan></text>
+</svg>
