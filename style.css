@@ -67,7 +67,7 @@ html{
 
 :root {
     --header-font: "Playfair Display", serif;
-    --main-font: "Roboto Condensed", sans-serif;
+    --main-font: "Chivo Mono", sans-serif;
     --main-header-size: 2rem;
     --sub-header-size: 1.7rem;
     --emphasis-text-size: 1.3rem;
@@ -824,16 +824,19 @@ h3{
         margin: 0 auto;
     }
 
+    #specialties ul li{
+        font-size: 1rem;
+    }
+
 
     /* Link group Styling  */
 
     #services-link-group{
         grid-row: 5;
-
         grid-template-rows: 1fr .5fr;
-        max-width: 500px;
+        max-width: 600px;
         margin-top: 50px;
-        align-items: center;
+
     }
 
     #services-link-group a + p{
