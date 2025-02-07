@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0">
         <meta name="author" content="Savannah Raley">
+        <link rel="stylesheet" media="(min-width: 1000px)" href="styles.css">
         <title>Fringe Salon</title>
 
         <link href="style.css" rel="stylesheet">
@@ -77,11 +78,11 @@
 
                     <ul>
                         <li>Highlights</li>
+                        <li>Balayage</li>
                         <li>Keratin smoothing</li>
                         <li>Ombre technique</li>
                         <li>Corrective color</li>
-                        <li>Chemical straightening</li>
-                        <li>Balayage</li>
+                        <li>Chemical services</li>
                         <li>Permanent waves</li>
                         <li>Extensions</li>
 
@@ -119,18 +120,16 @@
                 <section id="brands">
                     <div id="brands-img-container">
                     </div>
-                   <div id="brands-text-container">
-                        <h3>Brands we trust.</h3>
-                        <p>Professional service, professional products. Our stylists use only the most select hair products, trusted by stylists across the country</p>
+                    <h3>Brands we trust.</h3>
+                    <p>Professional service, professional products. Our stylists use only the most select hair products, trusted by stylists across the country</p>
 
-                        <ul> <!--spans will hold decorative lines-->
-                            <li>Aquage <span class="h-line"></span></li>
-                            <li>Wella <span class="h-line"></span></li>
-                            <li>Moroccan Oil <span class="h-line"></span></li>
-                           <li>GK Products <span class="h-line"></span></li>
-                            <li>Colorproof <span class="h-line"></span></li>
-                        </ul>
-                    </div>
+                    <ul> <!--spans will hold decorative lines-->
+                        <li>Aquage <span class="h-line"></span></li>
+                        <li>Wella <span class="h-line"></span></li>
+                        <li>Moroccan Oil <span class="h-line"></span></li>
+                        <li>GK Products <span class="h-line"></span></li>
+                        <li>Colorproof <span class="h-line"></span></li>
+                    </ul>
                 </section>
             </section>
 
@@ -148,9 +147,16 @@
 
             <section id="gallery">
                 <h2>Instagram gallery.</h2>
-                <!--script importing the instagram embed-->
-                <script src="https://static.elfsight.com/platform/platform.js" async></script>
-                <div class="elfsight-app-7941814e-d50e-4f12-ba11-6711a8ee0319" data-elfsight-app-lazy></div>
+                <div id="mobile-instagram">
+                    <!--script importing the instagram embed-->
+                    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+                    <div class="elfsight-app-7941814e-d50e-4f12-ba11-6711a8ee0319" data-elfsight-app-lazy></div>
+                </div>
+
+                <div id="desktop-instagram">
+                    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+                    <div class="elfsight-app-4471d302-16ca-4f6f-9677-a7e4e82e4001" data-elfsight-app-lazy></div>
+                </div>
             </section>
         </main>
 
@@ -174,6 +180,7 @@
                     </div>
                     <input type="submit" name="mySubmit" id="mySubmit" value="Submit" class="bttn-style">
                 </form>
+                <div id="contact-img-container"></div>
             </section>
 
             

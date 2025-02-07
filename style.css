@@ -1,6 +1,10 @@
 /* Author: Savannah Raley
 
 
+/* FONT IMPORT */
+
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -53,12 +57,10 @@ table {
 html{
     box-sizing: border-box;
     overflow-x: hidden;
-    
 }
 
-/* FONT IMPORT */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 
 /* GLOBAL VARIABLES */
@@ -111,7 +113,14 @@ form{
     font-size: var(--regular-text-size);
 }
 
-/* temp  */
+#services,
+#defines,
+#brands,
+#gallery,
+#contact{
+    padding: 5vh 5vw;
+}
+
 
 body{
     background-color: var(--light-bg);
@@ -301,13 +310,14 @@ header:has(.menu-checkbox:checked){
 
 /* List styling */
 #services-ul li{
+    font-family: var(--header-font);
     color: var(--light-text);
     font-size: var(--emphasis-text-size);
     background-color: var(--green-accent);
-    border: 1px solid var(--dark-green);
+    border: 3px solid var(--dark-green);
     text-align: center;
     margin: 10px;
-    padding: 10px; 
+    padding: 10px;
 }
 
 /* Specialties List  */
@@ -317,8 +327,7 @@ header:has(.menu-checkbox:checked){
     grid-row: 3;
     grid-column: 1 / span 2; /* spans across screen */
     border: 1px solid var(--green-accent);
-    margin: 75px 0 25px 0;
-    padding: 10px 10px 10px 20px;
+    margin-top: 75px;
 }
 
 #specialties h3{
@@ -327,13 +336,13 @@ header:has(.menu-checkbox:checked){
 
 /* Creates a grid for the list so it has two columns  */
 #specialties ul{
-
+    padding-left: 10px;
     list-style-type: circle;
     display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    color: #333b2b;
     column-gap: 10px;
-    row-gap: 5px;
+    grid-template-columns: 1fr 1fr;
+    color: #333b2b;
+    row-gap: 10px;
     /* keeps list centered for responsivness */
     max-width: 400px;
     margin: 0 auto;
@@ -345,11 +354,12 @@ header:has(.menu-checkbox:checked){
     grid-column: 1 / span 2; /*stretches across page */
     display: grid; /* creates a 2x2 grid for it's elements to sit in */
     grid-template-columns: 1fr 170px;
-    grid-template-rows: 170px .5fr;
+    grid-template-rows: 160px .5fr;
     row-gap: 10px;
     column-gap: 10px;
     /* keeps sectioned centered and a reasonable size for resposnivness  */
     max-width: 400px;
+    align-self: center;
     margin: 0 auto;
 }
 
@@ -402,9 +412,6 @@ header:has(.menu-checkbox:checked){
     /* min-height: 300px; */
 }
 
-#defines h3{
-    margin-top: 50px; /* Centers content */
-}
 
 #defines p{
     margin-bottom: 10px; /*places some space between the paragraphs */
@@ -419,32 +426,32 @@ header:has(.menu-checkbox:checked){
 
 #brands{
     display: grid;
-    grid-template-rows: .5fr 1fr; /* creates grid so that the image container has something to stretch to */
+    grid-template-rows: 3fr 1fr 1fr; /* creates grid so that the image container has something to stretch to */
 }
 
 
 #brands-img-container{ /* responsive bg image that crops itself */
-    background-image: url('Images/brands_img.jpg');
+    background:  /* gradient helps text stand out against image */
+        linear-gradient(90deg, rgba(31, 32, 32, 0.438) 5%, rgba(216, 216, 217, 0) 76%),
+        url('Images/brands_img.jpg');
     background-size: cover;
     background-position: center;
     width: 75%;
-    height: 75%;
+    height: 85%;
     margin: 0 auto; /* centers image */
     align-self: end; /* places image at bottom of grid cell so it overlaps with the h3 */
-
-
 }
 
-#brands-text-container{ /* overlaps text slightly with the image */
+#brands h3{ /* overlaps text slightly with the image */
     position: relative;
     top: -30px;
 }
 
-#brands-text-container p{
+#brands p{
     margin-bottom: 15px;
 }
 
-#brands-text-container li{ /* brands list styling */
+#brands li{ /* brands list styling */
     font-family: var(--header-font);
     font-size: var(--emphasis-text-size);
     padding: 15px 10px;
@@ -453,7 +460,7 @@ header:has(.menu-checkbox:checked){
     white-space: nowrap; /* ensures span element stops at the end of the brand name and doesn't linebreak it */
 }
 
-#brands-text-container span{ /* turnng the span element into a horizontal line */
+#brands span{ /* turnng the span element into a horizontal line */
     display: block;
     width: 100%;
     height: 0;
@@ -470,8 +477,8 @@ header:has(.menu-checkbox:checked){
     border-left: none;
     border-right: none;
     color: #e3dfd4;
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* creates 2x2 grid */
+    display: flex;
+    flex-direction: column;
 }
 
 #quote{ /* styling the customer's quote */
@@ -486,11 +493,17 @@ header:has(.menu-checkbox:checked){
 #quote img{ /* makes the quote mark smaller */
     width: 50px;
     padding-right: 10px;
+    position: relative;
+    top: -20px
 }
 
-#testimonial div + p{ /* keeps the quote attribution from stretching too wide at larger sizes */
-    margin: 0 auto;
-    max-width: 200px;
+#testimonial p{ /* keeps the quote attribution from stretching too wide at larger sizes */
+    margin: 0 auto 0 5vw;
+    max-width: 150px;
+}
+
+#testimonial span{
+    font-style: italic;
 }
 
 /* ---GALLERY---  */
@@ -504,6 +517,10 @@ header:has(.menu-checkbox:checked){
 #gallery h2{
     width: 130px; /* keeps heading at 2 lines */
     align-self: flex-start; /* putting it back to the left */
+}
+
+#desktop-instagram{
+    display: none;
 }
 
 
@@ -662,9 +679,449 @@ address{
 }
 
 footer button{
-    padding: 0 10px;
+    padding: 0 20px;
     background-color: transparent;
     border: 1px solid var(--gold-accent);
 }
 
 
+@media screen and (min-width:1000px){
+
+:root{ /*redefining the font size variables */
+    --main-header-size: 6rem;
+    --sub-header-size: 3.5rem;
+    --emphasis-text-size: 2.3rem;
+    --regular-text-size: 1.5rem;
+}
+
+h3{
+    font-size: var(--main-header-size);
+}
+    
+#services,
+#defines,
+#brands,
+#gallery,
+#testimonial,
+#contact{
+    padding: 10vh 15vw;
+}
+    header{ /* placing logo and nav side by side */
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* ---DROPDOWN MENU--  */
+    nav label,
+    nav input{ /* hiding hamburger icon */
+        display: none;
+    }
+
+    /* Getting rid of the dropdown menu */
+    .dropdown {
+        display: block;
+        position: static; /* brings dropdown back to being onscreen on page load */
+        background-color: transparent;
+        box-shadow: none;
+        width: auto;
+        height: auto;
+    }
+
+    /* Navigation links styling */
+    .nav-links {
+        flex-direction: row; /* arranges nav items horizontally instead of vertically */
+    }
+
+    .nav-links li { /* gets rid of previous styling */
+        border: none;
+        width: max-content;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+        font-weight: bold;
+        padding: 0 15px;
+    }
+
+    .social-links{ /* gets rid of facebook and insta icons */
+        display: none;
+    }
+
+    /* ---HERO SECTION--- */
+
+    #hero{
+        height: 100vh; /*hero section takes up entire screen */
+        background-position:20%;
+        padding-left: 10vw;
+    }
+
+    /* Font Styling  */
+    #hero h2{
+        font-size: 6rem;
+        max-width: 30vw;
+        margin-top: 10vw;
+    }
+
+    #hero span{ /* adjust line height gap */
+        position: relative;
+        top: -25px;
+        white-space: nowrap;
+    }
+
+    #hero p{
+        font-size: var(--emphasis-text-size);
+        max-width: 300px;
+    }
+
+    /* ---SERVICES--- */
+
+    #services{
+        grid-template-rows: .2fr .2fr 1fr .5fr 1fr;
+        grid-template-columns: 1fr 1.5fr;
+        column-gap: 25px;
+        margin-bottom: 10vh;
+    }
+
+    #services-img-container{
+        grid-row: 2 / span 3;
+        z-index: -50;
+        width: auto;
+    }
+
+    #services-ul{
+        position: static;
+        grid-row: 3;
+        grid-column: 1;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        top: 0;
+        right: -10vw
+    }
+
+    #services-ul li{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50%;
+    }
+
+    /* Specialties  */
+
+    #specialties{
+        grid-column: 1;
+        grid-row: 4;
+        margin: 0;
+        white-space: nowrap;
+        padding: 15px;
+        min-width: 425px;
+    }
+
+    #specialties ul{
+        column-gap: 50px;
+        margin: 0 auto;
+    }
+
+
+    /* Link group Styling  */
+
+    #services-link-group{
+        grid-row: 5;
+
+        grid-template-rows: 1fr .5fr;
+        max-width: 500px;
+        margin-top: 50px;
+        align-items: center;
+    }
+
+    #services-link-group a + p{
+        grid-column: span 1;
+        text-align: left;
+    }
+
+    #services a{
+        width: 500px;
+        max-width: 200px;
+        height: 200px;
+        text-align: center;
+        grid-row: span 2;
+    }
+
+    /* DEFINES SECTION  */
+    #defines{
+        height: 50vh;
+        background: 
+            linear-gradient(90deg, rgba(46, 46, 56, 1), rgba(0, 0, 0, 0) 55%),
+            url("Images/defines_img.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 30vw;
+    }
+
+    #defines p{
+        width: 50vw;
+        max-width: 500px;
+        padding-left: 15px;
+    }
+
+    #defines h3{
+        margin-top: 10vh;
+        padding-bottom: 25px;
+    }
+
+    /* ---BRANDS SECTION--- */
+
+    #brands{
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    #brands-img-container{
+        grid-row: span 2;
+        align-self: center;
+        width: 100%;
+        height: 100%;
+        margin-left: 5vw;
+    }
+
+    #brands h3{
+        position: static;
+        grid-column: 1;
+        grid-row: 1;
+        width: 450px;
+        align-self: end;
+        padding-bottom: 25px;
+    }
+
+    #brands p{
+        max-width: 500px;
+    }
+
+    #brands span{
+        
+        display: none;
+        position: absolute;
+    }
+
+    #brands ul{
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(100px, 150px));
+        column-gap: 5vw;
+        padding-top: 50px;
+        justify-items: center;
+        max-width: 75vw;
+        margin: 0 auto;
+    }
+
+    #brands li{
+        white-space: wrap;
+        font-size: var(--regular-text-size);
+        border: 1px solid var(--light-bg);
+        justify-content: center;
+        text-align: center;
+        min-height: 140px;
+        width: 100%;
+    }
+
+
+    /* ---TESTIMONIAL--- */
+
+    #testimonial{
+       flex-direction: row-reverse;
+       align-items: center;
+    }
+
+    #quote{
+        margin: 0;
+        margin: 10vh auto;
+        max-width: 100%;
+        border-left: 2px solid var(--light-bg);
+        font-size: var(--sub-header-size);
+    }
+
+    #testimonial p{
+        font-size: var(--emphasis-text-size);
+        min-width: 250px;
+        max-width: 300px;
+        margin: 10vh 0 10vh auto;
+        padding-right: 50px;
+    }
+
+
+    /* --GALLERY--- */
+
+    #mobile-instagram{
+        display: none;
+    }
+
+    #desktop-instagram{
+        display: block;
+        width: 100vw;
+    }
+
+    #gallery h2{
+        width: 100%;
+        text-align: center;
+    }
+
+    /* ---CONTACT--- */
+
+    footer{
+        background-color: transparent;
+        color: var(--dark-text);
+        padding: 0;
+    }
+
+    footer img[alt="Fringe salon logo"]{
+        display: none;
+    }
+
+    #contact{
+        display: grid;
+        grid-template-columns: .5fr 1fr;
+    }
+
+    #contact h2,
+    #contact h2 + p{
+        position: static;
+        width: 100%;
+        height: auto;
+        grid-column: 1 / span 2;
+    }
+
+    form{
+        grid-row: 3;
+        grid-column: 2;
+        width: 100%;
+        max-width: 600px;
+        border: 2px solid var(--dark-green);
+        justify-self: start;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 25px;
+        padding: 5vh 5vw;
+        margin-top: 5vh;
+    }
+
+    form input{
+        border: 3px solid var(--gold-accent);
+    }
+
+    #name{
+        grid-column: 1;
+    }
+
+    #email,
+    label[for="email"]{
+        grid-column: 2;
+    }
+
+    label[for="email"]{
+        grid-row: 1;
+    }
+
+    #comm,
+    label[for="comm"]{
+        grid-column: 1 / span 2;
+    }
+
+    input[type="submit"]{
+        width: 50%;
+        font-size: var(--regular-text-size);
+    }
+    #contact-img-container{
+        background-image: url("Images/contact_img.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 40vh;
+        max-height: 600px;
+        width: 50vw;
+        max-width: 900px;
+        grid-row: 4;
+        grid-column: 1 / span 2;
+        z-index: -50;
+        position: relative;
+        top: -125px
+    }
+
+    #footer-bottom{
+        position: relative;
+        background-color: var(--dark-bg);
+        color: var(--light-text);
+        grid-template-columns: repeat(5, 1fr);
+        padding: 10vh 10vw 0 10vw;
+    }
+
+    address, 
+    footer dl, 
+    footer ul, 
+    #hours p, 
+    small{
+        font-size: 1rem;
+    }
+
+    #socials{
+        grid-column: 1 / span 1;
+    }
+
+    #socials ul{
+        flex-direction: column;
+    }
+
+    #socials img{
+        width: 100px;
+    }
+
+    #socials h2,
+    #site-nav h2,
+    #policies-nav h2{
+        position:absolute;
+        left:-10000px;
+        top:auto;
+        width:1px;
+        height:1px;
+        overflow:hidden;
+    }
+
+    #address{
+        grid-column: 2;
+    }
+
+    #site-nav,
+    #policies-nav{
+        grid-column: 1 / span 5;
+
+    }
+
+    #site-nav ul{
+        display: flex;
+        justify-content: center;
+    }
+    #site-nav li{
+        padding: 0 25px;
+    }
+
+    #policies-nav ul{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+    #policies-nav li{
+        padding: 0 15px;
+    }
+
+    #copywrite{
+        grid-row: 5;
+        grid-column: span 6;
+        margin: 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    footer button{
+        display: none;
+    }
+}
