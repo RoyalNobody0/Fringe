@@ -67,7 +67,7 @@ html{
 
 :root {
     --header-font: "Playfair Display", serif;
-    --main-font: "Chivo Mono", sans-serif;
+    --main-font: "Roboto Condensed", sans-serif;
     --main-header-size: 2rem;
     --sub-header-size: 1.7rem;
     --emphasis-text-size: 1.3rem;
@@ -117,7 +117,9 @@ form{
 #defines,
 #brands,
 #gallery,
-#contact{
+#contact,
+.stylist-duo,
+h1{ /*sets standard padding for non-full bleed sections */
     padding: 5vh 5vw;
 }
 
@@ -126,25 +128,47 @@ body{
     background-color: var(--light-bg);
 
 }
+
+
 /* Utility Classes */
-.sr-only {
-    position:absolute;
-    left:-10000px;
-    top:auto;
-    width:1px;
-    height:1px;
+.sr-only { /*keeps elements screen reader accessible but hides them by moving them off-page */
+    position:absolute; 
+    left:-10000px; top:auto;
+    width:1px; height:1px;
     overflow:hidden;
-    }
+}
+
+.break:before{ /*adds line breaks where i want them */
+    content: "\a";
+    white-space: pre;
+}
+
+.circle-button{
+    max-width: 150px; /*stops growth before image scales too much */
+    display: flex; /* flex for text positioning */
+    margin-left: 20px;
+    align-items: center;
+    justify-content: center;
+    background-size: cover; /* sizing and centering image */
+    background-repeat: no-repeat; /* sizing and centering image */
+    background-position: center; /* sizing and centering image */
+    font-size: var(--emphasis-text-size);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--gold-accent);
+}
 
 
+
+/* -----HOMEPAGE STYLING----- */
 
 /* NAVBAR STYLING */
 
-header{
+#header-bar{
     position: absolute; /* Lets hero image show through navbar */
     width: 100vw; /* keeps it same width as screen */
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    top: 0; /*keeps it at top of page */
+    display: grid; grid-template-columns: 1fr 1fr;
     background-color: transparent;
     border-bottom: 1px solid var(--light-bg);
     padding: 10px ;
@@ -175,17 +199,14 @@ header{
 /* Style for the dropdown */
 .dropdown {
     position: absolute;
-    top: 60px;
-    right: -200%; /* Start off-screen */
-    width: 50vw; 
-    height: 100vh; /* Full height */
+    top: 60px; right: -200%; /* Start off-screen */
+    width: 50vw; height: 100vh; /* Full height */
     background: rgba(46, 46, 56, 0.9);
     box-shadow: -2px 10px 5px 0px rgba(0,0,0,0.20);
     transition: right 0.3s ease-in-out;
     z-index: 999;
-    display: grid;
+    display: grid; grid-template-rows: 50px 2fr 1fr;
     padding: 10px 30px 10px 10px;
-    grid-template-rows: 50px 2fr 1fr;
 }
 
 /* Make dropdown visible when checkbox is checked */
@@ -194,7 +215,7 @@ header{
 }
 
 /* Makes it so that the header bg matches the dropdown's when clicked */
-header:has(.menu-checkbox:checked){
+#header-bar:has(.menu-checkbox:checked){
     background-color:rgba(46, 46, 56, 0.9);;
 }
 
@@ -365,20 +386,7 @@ header:has(.menu-checkbox:checked){
 
 /* "Book Now" button styling  */
 #services a{
-    max-width: 150px; /*stops growth before image scales too much */
-    display: flex; /* flex for text positioning */
-    margin-left: 20px;
-    align-items: center;
-    justify-content: center;
     background-image: url('Images/Logos_Icons/schedule_button.svg'); /*adds image to link */
-    background-size: cover; /* sizing and centering image */
-    background-repeat: no-repeat; /* sizing and centering image */
-    background-position: center; /* sizing and centering image */
-    font-size: var(--emphasis-text-size);
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--gold-accent);
-
 }
 
 #services-link-group p{
@@ -512,6 +520,7 @@ header:has(.menu-checkbox:checked){
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 #gallery h2{
@@ -528,7 +537,6 @@ header:has(.menu-checkbox:checked){
 
 footer{
     padding-top: 50px;
-    margin-top: 50px;
     padding-bottom: 0;
     margin-bottom: 0;
     background-color: var(--dark-bg);
@@ -685,7 +693,204 @@ footer button{
 }
 
 
-@media screen and (min-width:1000px){
+/* -----SCHEDULE PAGE STYLING----- */
+
+/* ---HEADER--- */
+header h1{
+    margin-top: 50px;
+    padding-bottom: 1vh;
+}
+
+header p{
+    padding: 0 5vw 10vh 5vw;
+    font-family: var(--header-font);
+    font-size: var(--emphasis-text-size);
+    line-height: var(--emphasis-text-size);
+}
+
+header:has(p) #header-bar{
+    background-color: var(--dark-bg);
+}
+
+
+.header-break{
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+/* ---STYLIST BLOCKS--- */
+
+#stylists{
+    padding: 10vh 5vw;
+    background-color: var(--dark-bg);
+    display: grid;
+    grid-gap: 5vw;
+}
+
+.stylist-duo{
+    border: 1px solid var(--light-bg);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color: var(--dark-bg);
+    
+}
+
+/* Article Styling */
+article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5vw ;
+    
+}
+
+figcaption h3{
+    padding: 0;
+}
+
+figcaption,
+article a{
+    text-align: center;
+    color: var(--light-text);
+    z-index: 50;
+}
+
+figure{
+    position: relative;
+    top:15%
+}
+
+figcaption p{
+    font-style: italic;
+    padding: 15px 0;
+    font-family: var(--header-font);
+}
+
+figure{ /* setting up for linear gradient overlay */
+    position: relative;
+    display: inline-block;
+}
+
+figure:after{ /* adds linear gradient overlay to photos for text visibility */
+    border-radius: 50%;
+    content:'';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%; height: 100%;
+    display: inline-block;
+    background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 40%);
+}
+
+figure img{
+    display: block;
+    border-radius: 50%;
+    width: 100%;
+}
+
+.last-block{
+    display: flex;
+    justify-content: center;
+}
+
+#preston{
+    width: 40%;
+}
+
+#jessica .break{
+    white-space: nowrap;
+    font-size: 1.2rem;
+}
+
+/* Schedule button  */
+
+article a{
+    text-decoration: none;
+    border: 1px solid var(--light-bg);
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-style: italic;
+}
+
+/* ---APPLY DIRECTION--- */
+
+#apply-direction{
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 20vh;
+    justify-items: center;
+    background:  /* gradient helps text stand out against image */
+        linear-gradient(0deg, rgba(31, 32, 32, 0.6) 100%, rgba(216, 216, 217, 0) 76%),
+        url('Images/apply_img_blur.png');
+    
+}
+
+#apply-direction a{
+    grid-row: 2; grid-column: 2;
+    background-image: url('Images/Logos_Icons/apply_button-cropped.svg');
+    color: var(--light-text);
+    width: 100%;
+    max-width: 20vh;
+}
+
+
+/* -----APPLICATION PAGE----- */
+
+/* ---HEADER--- */
+
+#app-header{
+    display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 100px auto;
+}
+#app-header h1{
+    grid-row: 2;
+}
+#app-header p{
+    grid-column: 1; grid-row: 3;
+}
+
+#apply-img-container-header{
+    grid-column: 2;
+    grid-row: 2 / span 2;
+    background-image: url('Images/brands_img.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 5vw;
+}
+
+#app-form{
+    background-color: var(--green-accent);
+    color: var(--light-text);
+}
+
+#input-fields{
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset legend{
+    padding-top: 15px;
+}
+
+fieldset{
+    border: 1px solid var(--light-bg);
+    padding: 20px;
+}
+
+input[type="submit"]{
+    margin-top: 20px;
+}
+
+input[type="file"]{
+    background-color: transparent;
+    border: none;
+    color: var(--light-text);
+    text-transform: uppercase;
+}
+
+
+
+@media screen and (min-width:1200px){
 
 :root{ /*redefining the font size variables */
     --main-header-size: 6rem;
@@ -706,7 +911,7 @@ h3{
 #contact{
     padding: 10vh 15vw;
 }
-    header{ /* placing logo and nav side by side */
+    #header-bar{ /* placing logo and nav side by side */
         height: 50px;
         display: flex;
         align-items: center;
@@ -823,11 +1028,6 @@ h3{
         column-gap: 50px;
         margin: 0 auto;
     }
-
-    #specialties ul li{
-        font-size: 1rem;
-    }
-
 
     /* Link group Styling  */
 
@@ -1127,4 +1327,151 @@ h3{
     footer button{
         display: none;
     }
+
+
+    /* -----SCHEDULE PAGE STYLING----- */
+
+    
+    header p{
+        font-size: 2rem;
+        line-height: 5rem;
+    }
+
+    .header-break{
+        font-size: 9rem;
+    }
+
+    #stylists{
+        grid-template-columns: repeat(3, 25vw);
+        padding-top: 30vh;
+    }
+
+    article{
+        justify-content: center;
+        align-items: center;
+        font-family: var(--header-font);
+    }
+
+    article h3{
+        font-size: 2.5rem;
+    }
+
+    
+    .stylist-duo:not(.owner-duo){
+        grid-column: 1 / span 3;
+        justify-self: center;
+        max-width: 50vw;
+        min-width: 650px;
+    }
+
+    article:not(#cassie, #cyndee){
+        display: grid; grid-template-columns: 1fr 100px;
+        column-gap: 1rem;
+    }
+
+    figcaption{
+        text-align: left;
+    }
+
+    article:not(#cassie, #cyndee) figure{
+        top: 0;
+    }
+
+    article:not(#cassie, #cyndee) a{
+        position: relative;
+        top: -50%;
+        width: 50%;
+        justify-self: center;
+        background-color: var(--dark-bg);
+    }
+    
+
+    .owner-duo{
+        position: absolute;
+        top: 30vh; left: 50vw;
+        width: 40vw;
+    }
+
+    /* ---APPLY DIRECTION--- */
+
+    #apply-direction{
+        grid-template-columns: .5fr 1fr;
+    }
+
+    #apply-direction a{
+        grid-row: span 2;
+        max-width: 40vh;
+    }
+
+
+    /* -----APPICATION PAGE----- */
+
+    #apply-body{
+        display: grid; grid-template-columns: 35vw 65vw;
+    }
+
+    #app-header{
+        display: block;
+    }
+
+    #app-header p{
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    #app-header h1{
+
+        min-width: 390px;
+    }
+
+    #apply-img-container-header{
+        background-image: none;
+    }
+
+    #app-form{
+        background-color: transparent;
+        color: var(--dark-text);
+        height: 100vh;
+        margin-top: 50px;
+    }
+
+    #app-form form{
+        display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(5, 15vh);
+        max-width: 50vw;
+        margin: 0 auto;
+        border: none;
+        flex-shrink: none;
+        row-gap: 10px;
+        width: auto;
+    }
+
+    #apply-img-container{
+        background-image: url('Images/brands_img.jpg');
+        background-size: cover;
+        background-position: center;
+        grid-row: 1 / span 4;
+        grid-column: 2;
+    }
+
+    #input-fields{
+        grid-row: 2 / span 4;
+        border: 1px solid var(--dark-bg);
+        padding: 1vh 2vw;
+        justify-content: center;
+    }
+
+    input[type="submit"]{
+        grid-row: 5;
+        grid-column: 2;
+        width: 100%;
+        height: 50%;
+        margin: 0;
+        align-self: end;
+    }
+
+    fieldset{
+        border: 3px solid var(--gold-accent);
+    }
+
+
 }
