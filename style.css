@@ -36,7 +36,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	line-height: normal;
 }
 ol, ul {
 	list-style: none;
@@ -84,12 +84,6 @@ html{
 /* GENERAL STYLES */
 
 
-section, 
-footer{
-    padding: 25px 15px;
-    line-height: 1.1;
-}
-
 h1, 
 h2,
 h3{
@@ -113,21 +107,11 @@ form{
     font-size: var(--regular-text-size);
 }
 
-#services,
-#defines,
-#brands,
-#gallery,
-#contact,
-.stylist-duo,
-h1{ /*sets standard padding for non-full bleed sections */
-    padding: 5vh 5vw;
-}
-
-
 body{
     background-color: var(--light-bg);
 
 }
+
 
 
 /* Utility Classes */
@@ -144,31 +128,38 @@ body{
 }
 
 .circle-button{
-    max-width: 150px; /*stops growth before image scales too much */
     display: flex; /* flex for text positioning */
     margin-left: 20px;
-    align-items: center;
-    justify-content: center;
+    width: 80%;
+    align-items: center; justify-content: center;
     background-size: cover; /* sizing and centering image */
     background-repeat: no-repeat; /* sizing and centering image */
     background-position: center; /* sizing and centering image */
-    font-size: var(--emphasis-text-size);
+    font-size: 1.2rem;
     text-transform: uppercase;
     text-decoration: none;
     color: var(--gold-accent);
 }
 
+.padding-m{ /*sets standard padding for non-full bleed sections */
+    padding: 5vh 5vw;
+}
+
+.x-padding-m{
+    padding: 0 5vw;
+}
 
 
-/* -----HOMEPAGE STYLING----- */
 
-/* NAVBAR STYLING */
+/* -----HOMEPAGE----- */
+
+/* Navbar */
 
 #header-bar{
     position: absolute; /* Lets hero image show through navbar */
     width: 100vw; /* keeps it same width as screen */
     top: 0; /*keeps it at top of page */
-    display: grid; grid-template-columns: 1fr 1fr;
+    display: grid; grid-template-columns: 1fr 1fr; /* creates 2x1 grid to seperate the logo from the menu icon */
     background-color: transparent;
     border-bottom: 1px solid var(--light-bg);
     padding: 10px ;
@@ -268,7 +259,7 @@ body{
 /* HERO SECTION  */
 
 #hero{
-    height: 250px;
+
     background:  /* gradient helps text stand out against image */
         linear-gradient(90deg, rgba(31, 32, 32, 0.438) 5%, rgba(216, 216, 217, 0) 76%),
         url('Images/hero.jpg');
@@ -278,21 +269,20 @@ body{
     padding-top: 100px;
     color: var(--light-text);
 }
-
-#hero h2, 
+ 
 #hero p{
     width: 50vw;
     max-width: 200px;
 }
 
-#hero span{
+.small-break{
     font-size: var(--sub-header-size);
 }
 
 #hero p{
     padding-top: 10px;
     font-family: var(--header-font);
-    font-size: 1.5rem;
+    font-size: var(--emphasis-text-size);
 }
 
 
@@ -300,9 +290,7 @@ body{
 
 #services{
     padding-top: 100px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 200px 50px 1fr 1fr;
+    display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 200px 50px 1fr 1fr;
     grid-gap: 10px;
 }
 
@@ -326,7 +314,7 @@ body{
 #services-ul{
     position:absolute; /* absolute positioning so it can overlap the picture */
     width: 60vw; /* responsive width */
-    top: 575px;
+    top: 600PX;
 }
 
 /* List styling */
@@ -345,10 +333,10 @@ body{
 
 /* Positioning */
 #specialties{
-    grid-row: 3;
-    grid-column: 1 / span 2; /* spans across screen */
+    grid-row: 3; grid-column: 1 / span 2; /* spans across screen */
     border: 1px solid var(--green-accent);
-    margin-top: 75px;
+    margin-top: 15vh;
+    padding-bottom: 2vh;
 }
 
 #specialties h3{
@@ -359,11 +347,9 @@ body{
 #specialties ul{
     padding-left: 10px;
     list-style-type: circle;
-    display: grid;
-    column-gap: 10px;
-    grid-template-columns: 1fr 1fr;
     color: #333b2b;
-    row-gap: 10px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
     /* keeps list centered for responsivness */
     max-width: 400px;
     margin: 0 auto;
@@ -371,13 +357,9 @@ body{
 
 /* Services Bottom Group Styling */
 #services-link-group{
-    grid-row-start: 4; /* positioning at bottom of section */
-    grid-column: 1 / span 2; /*stretches across page */
-    display: grid; /* creates a 2x2 grid for it's elements to sit in */
-    grid-template-columns: 1fr 170px;
-    grid-template-rows: 160px .5fr;
-    row-gap: 10px;
-    column-gap: 10px;
+    grid-row-start: 4; /* positioning at bottom of section */ grid-column: 1 / span 2; /*stretches across page */
+    display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 160px .5fr; /* creates a 2x2 grid for it's elements to sit in */
+    row-gap: 10px; column-gap: 10px;
     /* keeps sectioned centered and a reasonable size for resposnivness  */
     max-width: 400px;
     align-self: center;
@@ -417,7 +399,6 @@ body{
         url('Images/defines_img.jpg'); /* image */
     background-size: cover;
     background-position-y: bottom;
-    /* min-height: 300px; */
 }
 
 
@@ -428,15 +409,10 @@ body{
 
 /* Brands Section  */
 
-#brands h3{
-    width: 130px; /* keeps heading at 2 lines */
-}
-
 #brands{
     display: grid;
     grid-template-rows: 3fr 1fr 1fr; /* creates grid so that the image container has something to stretch to */
 }
-
 
 #brands-img-container{ /* responsive bg image that crops itself */
     background:  /* gradient helps text stand out against image */
@@ -468,10 +444,9 @@ body{
     white-space: nowrap; /* ensures span element stops at the end of the brand name and doesn't linebreak it */
 }
 
-#brands span{ /* turnng the span element into a horizontal line */
+#brands ul span{ /* turnng the span element into a horizontal line */
     display: block;
-    width: 100%;
-    height: 0;
+    width: 100%; height: 0;
     border: 1px solid var(--light-bg);
     margin-left: 10px;
 }
@@ -505,11 +480,6 @@ body{
     top: -20px
 }
 
-#testimonial p{ /* keeps the quote attribution from stretching too wide at larger sizes */
-    margin: 0 auto 0 5vw;
-    max-width: 150px;
-}
-
 #testimonial span{
     font-style: italic;
 }
@@ -523,10 +493,7 @@ body{
     margin-bottom: 50px;
 }
 
-#gallery h2{
-    width: 130px; /* keeps heading at 2 lines */
-    align-self: flex-start; /* putting it back to the left */
-}
+
 
 #desktop-instagram{
     display: none;
@@ -536,8 +503,7 @@ body{
 /* ---FOOTER--- */
 
 footer{
-    padding-top: 50px;
-    padding-bottom: 0;
+    padding-top: 50px; padding-bottom: 0;
     margin-bottom: 0;
     background-color: var(--dark-bg);
     color: var(--light-text);
@@ -575,6 +541,13 @@ form label{
     padding: 15px 0 5px 0;
 }
 
+textarea{
+    font-family: var(--main-font);
+    background-color: var(--light-bg);
+    border: 3px solid var(--gold-accent);
+    color: #a7a49e;
+}
+
 #comm{
     margin-bottom: 50px;
 }
@@ -588,7 +561,8 @@ form input{
     height: 100px;
 }
 
-input[type="submit"]{
+#contactSubmit,
+#applySubmit{
     height: 50px;
     background-color: var(--gold-accent);
     border: none;
@@ -597,22 +571,24 @@ input[type="submit"]{
     text-transform: uppercase;
 }
 
-/* Footer Bottom */
+/* Footer info */
 
-#footer-bottom{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+#footer-info{
+    display: grid; grid-template-columns: 1fr 1fr;
+    position: relative;
+    padding-bottom: 20vh;
 }
 
-#footer-bottom nav{
+#footer-info nav,
+#footer-info section{
     padding:25px 15px ;
 }
 
-#footer-bottom a{
+#footer-info a{
     color: #a7a49e;
 }
 
-#footer-bottom h2{
+#footer-info h2{
     font-family: var(--main-font);
     font-size: var(--regular-text-size);
 }
@@ -654,15 +630,10 @@ small{
     width: 50px;
 }
 
-/* Address  */
-address{
-    line-height: 1.2rem;
-}
 
 /* Business hours */
 #hours dl{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: grid; grid-template-columns: 1fr 1fr;
 }
 
 /* Site Navigation  */
@@ -674,54 +645,48 @@ address{
 /* Legal Section  */
 
 #policies-nav{
-    grid-column: 1;
-    grid-row: 4;
+    grid-column: 1; grid-row: 4;
 }
 
 #copywrite{
-    display: flex;
-    padding: 15px;
-    margin: 0;
-    grid-column: span 2;
+    position: absolute;
+    bottom: 0;
+    display: grid; grid-template-columns: 1fr .5fr;
+    column-gap: 10px;
     align-items: center;
+    border-top: 1px solid var(--gold-accent);
 }
 
 footer button{
-    padding: 0 20px;
     background-color: transparent;
-    border: 1px solid var(--gold-accent);
+    border: none;
 }
+
 
 
 /* -----SCHEDULE PAGE STYLING----- */
 
 /* ---HEADER--- */
-header h1{
-    margin-top: 50px;
-    padding-bottom: 1vh;
-}
 
-header p{
-    padding: 0 5vw 10vh 5vw;
-    font-family: var(--header-font);
-    font-size: var(--emphasis-text-size);
-    line-height: var(--emphasis-text-size);
-}
 
-header:has(p) #header-bar{
+#header-bar[class="dark-nav"]{
     background-color: var(--dark-bg);
 }
 
 
-.header-break{
+.large-break{
     text-transform: uppercase;
     font-size: 3rem;
+    line-height: 2rem;
+}
+
+#schedule-header div:first-child{
+    padding-top: 100px;
 }
 
 /* ---STYLIST BLOCKS--- */
 
 #stylists{
-    padding: 10vh 5vw;
     background-color: var(--dark-bg);
     display: grid;
     grid-gap: 5vw;
@@ -729,9 +694,10 @@ header:has(p) #header-bar{
 
 .stylist-duo{
     border: 1px solid var(--light-bg);
-    display: grid;
-    grid-template-columns: 50% 50%;
+    display: grid; grid-template-columns: 50% 50%;
+    column-gap: 5vw;
     background-color: var(--dark-bg);
+    padding-top: 2vh; padding-bottom: 2vh;
     
 }
 
@@ -739,10 +705,9 @@ header:has(p) #header-bar{
 article{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin: 0 5vw ;
-    
+    justify-content: center;
+    position: relative;
 }
 
 figcaption h3{
@@ -753,34 +718,15 @@ figcaption,
 article a{
     text-align: center;
     color: var(--light-text);
-    z-index: 50;
 }
 
 figure{
+    text-align: center;
+}
+
+figcaption{
     position: relative;
-    top:15%
-}
-
-figcaption p{
-    font-style: italic;
-    padding: 15px 0;
-    font-family: var(--header-font);
-}
-
-figure{ /* setting up for linear gradient overlay */
-    position: relative;
-    display: inline-block;
-}
-
-figure:after{ /* adds linear gradient overlay to photos for text visibility */
-    border-radius: 50%;
-    content:'';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%; height: 100%;
-    display: inline-block;
-    background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 40%);
+    z-index: 50;
 }
 
 figure img{
@@ -788,6 +734,30 @@ figure img{
     border-radius: 50%;
     width: 100%;
 }
+
+figcaption p{
+    font-style: italic;
+    padding: 5px 0 15px 0;
+    font-family: var(--header-font);
+}
+
+#overlay{ /* setting up for linear gradient overlay */
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    top:15%;
+}
+
+#overlay:after{ /* adds linear gradient overlay to photos for text visibility */
+    border-radius: 50%;
+    content:'';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 40%);
+}
+
 
 .last-block{
     display: flex;
@@ -801,6 +771,11 @@ figure img{
 #jessica .break{
     white-space: nowrap;
     font-size: 1.2rem;
+}
+
+#cassie figcaption p,
+#cyndee figcaption p{
+    white-space: nowrap;
 }
 
 /* Schedule button  */
@@ -818,20 +793,21 @@ article a{
 #apply-direction{
     background-color: var(--dark-bg);
     color: var(--light-text);
-    display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 20vh;
+    display: grid; grid-template-columns: 1fr 1fr;
     justify-items: center;
     background:  /* gradient helps text stand out against image */
         linear-gradient(0deg, rgba(31, 32, 32, 0.6) 100%, rgba(216, 216, 217, 0) 76%),
         url('Images/apply_img_blur.png');
-    
+
+    background-repeat: no-repeat;
+    background-size: cover;   
+    height: 30vh;
 }
 
 #apply-direction a{
-    grid-row: 2; grid-column: 2;
     background-image: url('Images/Logos_Icons/apply_button-cropped.svg');
     color: var(--light-text);
-    width: 100%;
-    max-width: 20vh;
+    background-size: contain;
 }
 
 
@@ -842,6 +818,7 @@ article a{
 #app-header{
     display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 100px auto;
 }
+
 #app-header h1{
     grid-row: 2;
 }
@@ -856,11 +833,13 @@ article a{
     background-size: cover;
     background-position: center;
     margin: 5vw;
+    min-height: 30vh;
 }
 
 #app-form{
     background-color: var(--green-accent);
     color: var(--light-text);
+    padding-top: 0;
 }
 
 #input-fields{
@@ -877,7 +856,7 @@ fieldset{
     padding: 20px;
 }
 
-input[type="submit"]{
+#applySubmit{
     margin-top: 20px;
 }
 
@@ -892,25 +871,21 @@ input[type="file"]{
 
 @media screen and (min-width:1200px){
 
-:root{ /*redefining the font size variables */
-    --main-header-size: 6rem;
-    --sub-header-size: 3.5rem;
-    --emphasis-text-size: 2.3rem;
-    --regular-text-size: 1.5rem;
-}
+    :root{ /*redefining the font size variables */
+        --main-header-size: 6rem;
+        --sub-header-size: 3.5rem;
+        --emphasis-text-size: 2.3rem;
+        --regular-text-size: 1.5rem;
+    }
 
-h3{
-    font-size: var(--main-header-size);
-}
-    
-#services,
-#defines,
-#brands,
-#gallery,
-#testimonial,
-#contact{
-    padding: 10vh 15vw;
-}
+    h3{
+        font-size: var(--main-header-size);
+    }
+        
+    .padding-m{
+        padding: 10vh 15vw;
+    }
+
     #header-bar{ /* placing logo and nav side by side */
         height: 50px;
         display: flex;
@@ -930,8 +905,7 @@ h3{
         position: static; /* brings dropdown back to being onscreen on page load */
         background-color: transparent;
         box-shadow: none;
-        width: auto;
-        height: auto;
+        width: auto; height: auto;
     }
 
     /* Navigation links styling */
@@ -946,87 +920,67 @@ h3{
 
     .nav-links a {
         font-size: 1rem;
-        font-weight: bold;
         padding: 0 15px;
     }
 
     .social-links{ /* gets rid of facebook and insta icons */
         display: none;
     }
+    
 
     /* ---HERO SECTION--- */
 
     #hero{
-        height: 100vh; /*hero section takes up entire screen */
         background-position:20%;
-        padding-left: 10vw;
+        padding-top: 25vh;
+        height: 75vh; /*hero section takes up entire screen. 75 accounts for the 25 padding*/
     }
 
     /* Font Styling  */
-    #hero h2{
-        font-size: 6rem;
-        max-width: 30vw;
-        margin-top: 10vw;
-    }
 
-    #hero span{ /* adjust line height gap */
+    .small-break{ /* adjust line height gap */
         position: relative;
         top: -25px;
         white-space: nowrap;
     }
 
     #hero p{
-        font-size: var(--emphasis-text-size);
         max-width: 300px;
     }
 
     /* ---SERVICES--- */
 
     #services{
-        grid-template-rows: .2fr .2fr 1fr .5fr 1fr;
-        grid-template-columns: 1fr 1.5fr;
-        column-gap: 25px;
-        margin-bottom: 10vh;
+        grid-template-rows: .2fr .2fr 1fr .5fr 1fr; grid-template-columns: 1fr 1.5fr;
     }
 
     #services-img-container{
         grid-row: 2 / span 3;
-        z-index: -50;
-        width: auto;
     }
 
     #services-ul{
         position: static;
-        grid-row: 3;
-        grid-column: 1;
+        grid-row: 3; grid-column: 1;
         width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        top: 0;
-        right: -10vw
+        display: grid; grid-template-columns: 1fr 1fr;
     }
 
     #services-ul li{
         display: flex;
-        align-items: center;
-        justify-content: center;
+        align-items: center; justify-content: center;
         height: 50%;
     }
 
     /* Specialties  */
 
     #specialties{
-        grid-column: 1;
-        grid-row: 4;
+        grid-column: 1; grid-row: 4;
         margin: 0;
         white-space: nowrap;
-        padding: 15px;
-        min-width: 425px;
     }
 
     #specialties ul{
         column-gap: 50px;
-        margin: 0 auto;
     }
 
     /* Link group Styling  */
@@ -1036,7 +990,6 @@ h3{
         grid-template-rows: 1fr .5fr;
         max-width: 600px;
         margin-top: 50px;
-
     }
 
     #services-link-group a + p{
@@ -1045,14 +998,11 @@ h3{
     }
 
     #services a{
-        width: 500px;
-        max-width: 200px;
-        height: 200px;
-        text-align: center;
         grid-row: span 2;
     }
 
     /* DEFINES SECTION  */
+
     #defines{
         height: 50vh;
         background: 
@@ -1064,7 +1014,6 @@ h3{
     }
 
     #defines p{
-        width: 50vw;
         max-width: 500px;
         padding-left: 15px;
     }
@@ -1077,23 +1026,19 @@ h3{
     /* ---BRANDS SECTION--- */
 
     #brands{
-        grid-template-columns: 1fr 3fr;
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 1fr);
+        column-gap: 5vw;
     }
 
     #brands-img-container{
         grid-row: span 2;
         align-self: center;
-        width: 100%;
-        height: 100%;
-        margin-left: 5vw;
+        width: 100%; height: 100%;
     }
 
     #brands h3{
         position: static;
-        grid-column: 1;
-        grid-row: 1;
-        width: 450px;
+        grid-column: 1; grid-row: 1;
         align-self: end;
         padding-bottom: 25px;
     }
@@ -1102,16 +1047,13 @@ h3{
         max-width: 500px;
     }
 
-    #brands span{
-        
+    #brands ul span{
         display: none;
-        position: absolute;
     }
 
     #brands ul{
         grid-column: span 2;
-        display: grid;
-        grid-template-columns: repeat(5, minmax(100px, 150px));
+        display: grid; grid-template-columns: repeat(5, minmax(100px, 300px));
         column-gap: 5vw;
         padding-top: 50px;
         justify-items: center;
@@ -1125,7 +1067,6 @@ h3{
         border: 1px solid var(--light-bg);
         justify-content: center;
         text-align: center;
-        min-height: 140px;
         width: 100%;
     }
 
@@ -1133,12 +1074,11 @@ h3{
     /* ---TESTIMONIAL--- */
 
     #testimonial{
-       flex-direction: row-reverse;
-       align-items: center;
+        flex-direction: row-reverse;
+        align-items: center;
     }
 
     #quote{
-        margin: 0;
         margin: 10vh auto;
         max-width: 100%;
         border-left: 2px solid var(--light-bg);
@@ -1148,7 +1088,6 @@ h3{
     #testimonial p{
         font-size: var(--emphasis-text-size);
         min-width: 250px;
-        max-width: 300px;
         margin: 10vh 0 10vh auto;
         padding-right: 50px;
     }
@@ -1166,7 +1105,6 @@ h3{
     }
 
     #gallery h2{
-        width: 100%;
         text-align: center;
     }
 
@@ -1231,7 +1169,7 @@ h3{
         grid-column: 1 / span 2;
     }
 
-    input[type="submit"]{
+    #contactSubmit{
         width: 50%;
         font-size: var(--regular-text-size);
     }
@@ -1250,7 +1188,7 @@ h3{
         top: -125px
     }
 
-    #footer-bottom{
+    #footer-info{
         position: relative;
         background-color: var(--dark-bg);
         color: var(--light-text);
@@ -1317,11 +1255,13 @@ h3{
     }
 
     #copywrite{
+        display: block;
+        position: static;
         grid-row: 5;
         grid-column: span 6;
         margin: 0;
-        width: 100%;
-        justify-content: center;
+        text-align: center;
+        border: none;
     }
 
     footer button{
@@ -1331,13 +1271,8 @@ h3{
 
     /* -----SCHEDULE PAGE STYLING----- */
 
-    
-    header p{
-        font-size: 2rem;
-        line-height: 5rem;
-    }
 
-    .header-break{
+    .large-break{
         font-size: 9rem;
     }
 
@@ -1356,51 +1291,65 @@ h3{
         font-size: 2.5rem;
     }
 
-    
-    .stylist-duo:not(.owner-duo){
-        grid-column: 1 / span 3;
-        justify-self: center;
-        max-width: 50vw;
-        min-width: 650px;
+    #owner-duo{
+        right: -15vw;
+        max-width: 45vw;
+        min-width: auto;
+        column-gap: 1vw;
     }
 
-    article:not(#cassie, #cyndee){
-        display: grid; grid-template-columns: 1fr 100px;
+    #owner-duo figure img{
+        width: 100%;
+    }
+
+        
+    .stylist-duo{
+        position: relative;
+        top: -45vh;
+        grid-column: 1 / span 3;
+        justify-self: center;
+        min-width: 650px;
+        padding: 2vh 7vw;
+    }
+
+    .stylist-duo:not(#owner-duo){
+        right: 7.5vw;
+    }
+
+    figure{
+        display: grid; grid-template-columns: 1fr 1fr;
         column-gap: 1rem;
+    }
+    
+    #overlay::after{
+        display: none;
+    }
+
+    figure{
+        justify-self: center;
+        width: 100%;
     }
 
     figcaption{
         text-align: left;
+        align-self: center;
     }
 
-    article:not(#cassie, #cyndee) figure{
+    article figure{
         top: 0;
     }
 
-    article:not(#cassie, #cyndee) a{
+    article a{
         position: relative;
-        top: -50%;
-        width: 50%;
+        left: -25%;
+        width: 25%;
         justify-self: center;
         background-color: var(--dark-bg);
     }
-    
-
-    .owner-duo{
-        position: absolute;
-        top: 30vh; left: 50vw;
-        width: 40vw;
-    }
-
-    /* ---APPLY DIRECTION--- */
 
     #apply-direction{
-        grid-template-columns: .5fr 1fr;
-    }
-
-    #apply-direction a{
-        grid-row: span 2;
-        max-width: 40vh;
+        position: relative;
+        top: -20vh;
     }
 
 
@@ -1412,6 +1361,7 @@ h3{
 
     #app-header{
         display: block;
+        padding-bottom: 0;
     }
 
     #app-header p{
@@ -1426,6 +1376,7 @@ h3{
 
     #apply-img-container-header{
         background-image: none;
+        min-height: fit-content;
     }
 
     #app-form{
@@ -1460,7 +1411,7 @@ h3{
         justify-content: center;
     }
 
-    input[type="submit"]{
+    #applySubmit{
         grid-row: 5;
         grid-column: 2;
         width: 100%;
@@ -1472,6 +1423,5 @@ h3{
     fieldset{
         border: 3px solid var(--gold-accent);
     }
-
 
 }

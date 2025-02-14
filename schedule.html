@@ -10,13 +10,17 @@
         <link href="style.css" rel="stylesheet">
       </head>
 
-    <body>
-        <header>
-            <h1>Meet the<span class="break header-break">team</span></h1>
-            <p>Guaranteed Satisfaction. <span class="break">Highly Trained professionals.</span></p>
+    <body id="schedule-body">
+        <header id="schedule-header">
 
-            <div id="header-bar"> <!--Allows me to style and arrange the navbar seperate from the h1-->
-                <img id="header-logo" src="Images\Logos_Icons\Fringe_Logo_white.svg" alt="Fringe salon logo">
+            <!-- Main Header and Subheader  -->
+            <div class="padding-m">
+                <h1>Meet the<span class="break large-break">team</span></h1>
+                <p>Guaranteed Satisfaction. <span class="break">Highly Trained professionals.</span></p>
+            </div>
+
+            <div id="header-bar" class="dark-nav"> <!--Allows me to style and arrange the navbar seperate from the h1-->
+                <img id="header-logo" src="Images/Logos_Icons/Fringe_Logo_white.svg" alt="Fringe salon logo">
     
                 <nav>
                     <h2 class="sr-only">Main Navigation</h2> <!-- will be hidden -->
@@ -39,6 +43,8 @@
                                 <li><a href="apply.html">Apply Now</a></li>
                                 <li><a href="index.html#contact">Contact</a></li>
                             </ul>
+
+                            <!-- Social Media Links For the Dropdown Menu  -->
                             <ul class="social-links">
                                 <li>
                                     <a href="https://www.instagram.com/fringesalonwr?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Visit Fringe Salon on Instagram">
@@ -57,202 +63,262 @@
             </div>
         </header>
         <main>
-            <section id="stylists">
-                <h2 class="sr-only">Our Stylists</h2>
-                <div class="stylist-duo owner-duo">
+            <!-- Grid Displaying Salon Staff in Groups of 2  -->
+            <section id="stylists" class="padding-m">
+                <h2 class="sr-only">Our Stylists</h2> <!--Will be hidden-->
+
+                <!-- Each .stylist-duo div is a grid containing two articles, each showcasing a seperate staff member  -->
+                <div id="owner-duo" class="stylist-duo padding-m">
+                    <!-- Each article is a flexbox containing the figure and schedule link  -->
                     <article id="cassie">
+                        <!-- Each figure contains the staff member's image with a figcaption containing their name, and their position  -->
                         <figure>
-                            <img src="Images\Staff_Photos\cassie.jpg" alt="a fair-skinned woman with loosely curled caramel hair and blue eyes. She is wearing a black blazer, gold jewlery, and minimal makeup.">
+                            <!-- Overlay section allows me to place a dark gradient over the image so the text is more readable when positioned over it  -->
+                            <div id="overlay">
+                                <img src="Images/Staff_Photos/cassie.jpg" alt="Black and White photo of a fair-skinned woman with loosely curled. She is wearing a blazer, jewlery, and minimal makeup.">
+                            </div>
+
+                            <figcaption>
+                                <h3>Cassie <span class="break">Bandy</span></h3>
+                                <p>Owner/Stylist</p>
+                            </figcaption>
                         </figure>
-                        <figcaption>
-                            <h3>Cassie <span class="break">Bandy</span></h3>
-                            <p>Owner/Stylist</p>
-                        </figcaption>
+
                         <a href="#">Schedule</a>
                     </article>
                     <article id="cyndee">
                         <figure>
-                            <img src="Images\Staff_Photos\cyndee.jpg" alt="a fair-skinned woman with platinum-blonde hair that fades to a rose pink at the ends. She is wearing a black top with sheer, puffy sleeves that is embroidered with black flowers. Her makeup is soft and pink">
+                            <div id="overlay">
+                                <img src="Images/Staff_Photos/cyndee.jpg" alt="Black and White photo of a fair-skinned woman with light hair. She is wearing a top with sheer, puffy sleeves that is embroidered with black flowers.">
+                            </div>
+
+                            <figcaption>
+                                <h3>Cyndee <span class="break">O'Quinn</span></h3>
+                                <p>Owner/Stylist</p>
+                            </figcaption>
                         </figure>
-                        <figcaption>
-                            <h3>Cyndee <span class="break">O'Quinn</span></h3>
-                            <p>Owner/Stylist</p>
-                        </figcaption>
                         <a href="#">Schedule</a>
                     </article>
                 </div>
-                <div class="stylist-duo">
+                <div class="stylist-duo padding-m">
                     <article id="tina">
                         <figure>
-                            <img src="Images\Staff_Photos\tina.jpg" alt="An olive-complexioned woman with brown eyes and and shoulder-length brown hair. She is wearing a black, short-sleeved mock turtleneck with a simple, silver cross necklace.">
+                            <div id="overlay">
+                                <img src="Images/Staff_Photos/tina.jpg" alt="Black and White photo of an olive-complexioned woman with shoulder-length hair. She is wearing a short-sleeved mock turtleneck with a simple cross necklace.">
+                            </div>
+
+                            <figcaption>
+                                <h3>Tina <span class="break">Tomlinson</span></h3>
+                                <p>Stylist</p>
+                            </figcaption>
                         </figure>
-                        <figcaption>
-                            <h3>Tina <span class="break">Tomlinson</span></h3>
-                            <p>Stylist</p>
-                        </figcaption>
                         <a href="#">Schedule</a>
                     </article>
                     <article id="jelena">
                         <figure>
-                            <img src="Images\Staff_Photos\jelena.jpg" alt="a woman with long, platinum-blonde hair, bright green eyes, and heavy mascara. She is wearing a sheer, black mock turtleneck over a simple black tanktop.">
+                            <div id="overlay">
+                                <img src="Images/Staff_Photos/jelena.jpg" alt="Black and White photo of a woman with long, light hair and heavy mascara. She is wearing a sheer, mock turtleneck over a simple tanktop.">
+                            </div>
+
+                            <figcaption>
+                                <h3>Jelena <span class="break">Winters</span></h3>
+                                <p>Stylist</p>
+                            </figcaption>
                         </figure>
-                        <figcaption>
-                            <h3>Jelena <span class="break">Winters</span></h3>
-                            <p>Stylist</p>
-                        </figcaption>
                         <a href="#">Schedule</a>
                     </article>
                 </div>
-                <div class="stylist-duo">
+                <div class="stylist-duo padding-m">
                     <article id="mackenzie">
                         <figure>
-                            <img src="Images\Staff_Photos\mackenzie.jpg" alt="A young woman with blue eyes and shoulder-length brown curls. She is wearing a black mock turtleneck.">
+                            <div id="overlay">
+                                <img src="Images/Staff_Photos/mackenzie.jpg" alt="Black and White photo of a young woman with shoulder-length curls. She is wearing a mock turtleneck.">
+                            </div>
+
+                            <figcaption>
+                                <h3>Mackenzie <span class="break">Riche</span></h3>
+                                <p>Stylist</p>
+                            </figcaption>
                         </figure>
-                        <figcaption>
-                            <h3>Mackenzie <span class="break">Riche</span></h3>
-                            <p>Stylist</p>
-                        </figcaption>
                         <a href="#">Schedule</a>
                     </article>
                     <article id="tiffany">
                         <figure>
-                            <img src="Images\Staff_Photos\tiffany.jpg" alt="a woman with coppery curls and a dark shadow-root. She is dressed in a pink, sleevless top and has a full tattoo sleeve prominently featuring a pink flower.">
+                            <div id="overlay">
+                                <img src="Images/Staff_Photos/tiffany.jpg" alt="Black and White photo of a woman with curls and a dark shadow-root. She is dressed in a sleevless top and has a full tattoo sleeve prominently featuring a flower.">
+                            </div>
+
+                            <figcaption>
+                                <h3>Tiffany <span class="break">Besley</span></h3>
+                                <p>Stylist</p>
+                            </figcaption>
                         </figure>
-                        <figcaption>
-                            <h3>Tiffany <span class="break">Besley</span></h3>
-                            <p>Stylist</p>
-                        </figcaption>
                         <a href="#">Schedule</a>
                     </article>
                 </div>
-                <div class="stylist-duo">
+                <div class="stylist-duo padding-m">
                     <article id="ellie">
                         <figure>
-                            <img src="Images\Staff_Photos\ellie.jpg" alt="A young woman with very long blonde curls, blue eyes, and a small tattoo of the moon on her forearm. She is wearing a simple black dress with thick straps and a sweetheart neckline.">
+                            <div id="overlay">
+                                <img src="Images/Staff_Photos/ellie.jpg" alt="Black and White photo of a young woman with very long, light curls and a small tattoo of the moon on her forearm. She is wearing a simple dress with thick straps and a sweetheart neckline.">
+                            </div>
+
+                            <figcaption>
+                                <h3>Ellie <span class="break">Poole</span></h3>
+                                <p>Stylist</p>
+                            </figcaption>
                         </figure>
-                        <figcaption>
-                            <h3>Ellie <span class="break">Poole</span></h3>
-                            <p>Stylist</p>
-                        </figcaption>
                         <a href="#">Schedule</a>
                     </article>
                     <article id="gigi">
                         <figure>
-                            <img src="Images/Staff_Photos/gigi.jpg" alt="a tan woman with bright, grey eyes and very long brown curls that have warm, caramel highlights. She is dressed in black jeans, a crew-neck t-shirt, and has a cream-colored panama hat with brown and turquoise detailing.">
+                            <div id="overlay">
+                                <img src="Images/Staff_Photos/gigi.jpg" alt="Black and White photo of a tan woman with bright eyes and very long curls that have highlights in them. She is dressed in jeans, a crew-neck t-shirt, and has a light-colored panama hat with darker detailing.">
+                            </div>
+
+                            <figcaption>
+                                <h3>Gigi <span class="break">Lopez</span></h3>
+                                <p>Stylist</p>
+                            </figcaption>
                         </figure>
-                        <figcaption>
-                            <h3>Gigi <span class="break">Lopez</span></h3>
-                            <p>Stylist</p>
-                        </figcaption>
                         <a href="#">Schedule</a>
                     </article>
                 </div>
-                <div class="stylist-duo">
+                <div class="stylist-duo padding-m">
                     <article id="ann">
                         <figure>
-                            <img src="Images\Staff_Photos\ann.jpg" alt="A young woman short brown curls and bangs. She is wearing a pair of large, circular glasses, a black dress with shawl sleeves, and a burgundy lipstick.">
+                            <div id="overlay">
+                                <img src="Images/Staff_Photos/ann.jpg" alt="Black and White photo of a young woman short dark curls and bangs. She is wearing a pair of large, circular glasses, a dress with shawl sleeves, and a dark lipstick.">
+                            </div>
+
+                            <figcaption>
+                                <h3>Ann <span class="break">Raley</span></h3>
+                                <p>Stylist</p>
+                            </figcaption>
                         </figure>
-                        <figcaption>
-                            <h3>Ann <span class="break">Raley</span></h3>
-                            <p>Stylist</p>
-                        </figcaption>
                         <a href="#">Schedule</a>
                     </article>
                     <article id="callie">
                         <figure>
-                            <img src="Images\Staff_Photos\callie.jpg" alt="a young woman with shoulder-length blonde curls and a piercing on her right eyebrow. She is wearing a loose-fitting black sweater buttoned over a black chiffon dress.">
+                            <div id="overlay">
+                                <img src="Images/Staff_Photos/callie.jpg" alt="Black and White photo of a young woman with shoulder-length light-colored curls and a piercing on her right eyebrow. She is wearing a loose-fitting sweater buttoned over a chiffon dress.">
+                            </div>
+
+                            <figcaption>
+                                <h3>Callie <span class="break">O'Brien</span></h3>
+                                <p>Stylist</p>
+                            </figcaption>
                         </figure>
-                        <figcaption>
-                            <h3>Callie <span class="break">O'Brien</span></h3>
-                            <p>Stylist</p>
-                        </figcaption>
                         <a href="#">Schedule</a>
                     </article>
                 </div>
-                <div class="stylist-duo">
+                <div class="stylist-duo padding-m">
                     <article id="alley">
                         <figure>
-                            <img src="Images\Staff_Photos\alley.jpg" alt="A young woman with long, dark-brown curls and a large pair of thick-framed, square glasses. She is wearing a black tanktop under a sheer black top with floral embroidery.">
+                            <div id="overlay">
+                                <img src="Images/Staff_Photos/alley.jpg" alt="Black and White photo of a young woman with long, dark curls, and a large pair of thick-framed, square glasses. She is wearing a tanktop under a sheer top with floral embroidery.">
+                            </div>
+
+                            <figcaption>
+                                <h3>Alley <span class="break">Cobb</span></h3>
+                                <p>Stylist</p>
+                            </figcaption>
                         </figure>
-                        <figcaption>
-                            <h3>Alley <span class="break">Cobb</span></h3>
-                            <p>Stylist</p>
-                        </figcaption>
                         <a href="#">Schedule</a>
                     </article>
                     <article id="jessica">
                         <figure>
-                            <img src="Images\Staff_Photos\jessica.png" alt="a woman with long blonde curls with brown lowlights. She is wearing a lacy black dress with corset lacing across plunging v-neck along with a pair of large, bejewled earrings.">
+                            <div id="overlay">
+                                <img src="Images/Staff_Photos/jessica.png" alt="Black and White photo of a woman with long, light-colored curls. She is wearing a lacy dress with corset lacing across plunging v-neck along with a pair of large, bejewled earrings.">
+                            </div>
+
+                            <figcaption>
+                                <h3>Jessica <span class="break">Elser-Kendall</span></h3>
+                                <p>Stylist</p>
+                            </figcaption>
                         </figure>
-                        <figcaption>
-                            <h3>Jessica <span class="break">Elser-Kendall</span></h3>
-                            <p>Stylist</p>
-                        </figcaption>
                         <a href="#">Schedule</a>
                     </article>
                 </div>
-                <div class="stylist-duo last-block">
+                <div class="stylist-duo last-block padding-m">
                     <article id="preston">
                         <figure>
-                            <img src="Images\Staff_Photos\preston.jpg" alt="A bearded man wearing a dark button-up with white stripes, a pair of khaki pants, and a baseball cap.">
+                            <div id="overlay">
+                                <img src="Images/Staff_Photos/preston.jpg" alt="Black and White photo of a bearded man wearing a dark button-up with white stripes, a pair of khaki pants, and a baseball cap.">
+                            </div>
+
+                            <figcaption>
+                                <h3>Preston<span class="break">Werneth</span></h3>
+                                <p>Barber</p>
+                            </figcaption>
                         </figure>
-                        <figcaption>
-                            <h3>Preston<span class="break">Werneth</span></h3>
-                            <p>Barber</p>
-                        </figcaption>
                         <a href="#">Schedule</a>
                     </article>
                 </div>
             </section>
 
-            <section id="apply-direction">
+            <!-- Section Directing Towards Application Page  -->
+            <section id="apply-direction" class="padding-m">
                 <h2>Looking to join <span class="break">the team?</span></h2>
-                <a class="circle-button" href="apply.html">Apply</a>
+                <a class="circle-button" href="apply.html">Apply</a> <!--Link to Application Page-->
+
+                <!-- Empty Div for Application Image  -->
                 <div id="apply-direct-img-container"></div>
             </section>
         </main>
 
         <footer>
-            <img src="Images\Logos_Icons\Fringe_Logo.svg" alt="Fringe salon logo">
+            <img src="Images/Logos_Icons/Fringe_Logo.svg" alt="Fringe salon logo"> <!--Salon Logo-->
 
-            <section id="contact">
+            <!-- Contact Section  -->
+            <section id="contact" class="padding-m">
                 <h2>Contact us.</h2>
                 <p>Reach out with any comments or questions</p>
 
+                <!-- Contact Form  -->
                 <form>
-                    <label for="name">Name<span class="required">*</span></label>
-                    <input type="text" name="name" id="name" autocomplete="given-name" placeholder="Your Name" required>
-    
-                    <label for="email">Email<span class="required">*</span></label>
-                    <input type="email" name="email" id="email" autocomplete="email" placeholder="Email Address" required>
-    
+                    <label for="name">Name<span class="required">*</span></label> <!--Name Input Label-->
+                    <input type="text" name="name" id="name" autocomplete="given-name" placeholder="Your Name" required> <!--Name Input -->
+
+                    <label for="email">Email<span class="required">*</span></label> <!--Email Input Label-->
+                    <input type="email" name="email" id="email" autocomplete="email" placeholder="Email Address" required> <!--Email Input -->
+
+                    <!-- Message Input Box -->
                     <div id="comm">
-                        <label for="comments">Message us<span class="required">*</span></label>
-                        <input type="textarea" name="comments" id="comments" placeholder="Tell us whats on your mind" required>
+                        <label for="comments">Message us<span class="required">*</span></label> <!--Label for message input-->
+                        <textarea name="comments" id="comments" required>Tell us whats on your mind</textarea> <!--Message input-->
                     </div>
-                    <input type="submit" name="mySubmit" id="mySubmit" value="Submit" class="bttn-style">
+
+                    <input type="submit" name="contactSubmit" id="contactSubmit" value="Submit" class="bttn-style"> <!--Submit button-->
                 </form>
+
+                <!-- Empty Div for Contact Image to Be Placed In  -->
                 <div id="contact-img-container"></div>
             </section>
 
-            
-            <div id="footer-bottom">
+            <!-- Footer Section Containing Store Info and Site Navigation  -->
+            <div id="footer-info" class="padding-m">
+
+                <!-- Social Links -->
                 <section id="socials">
                     <h2>Socials</h2>
+
+                    <!-- Link List of Images  -->
                     <ul>
-                        <li>
+                        <li> <!--Instagram Link-->
                             <a href="https://www.instagram.com/fringesalonwr?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Visit Fringe Salon on Instagram">
-                                <img src="Images\Logos_Icons\icons8-instagram-100.png">
+                                <img src="Images/Logos_Icons/icons8-instagram-100.png" alt="Instagram logo">
                             </a>
                         </li>
-                        <li>
+                        <li> <!--Facebook Link-->
                             <a href="https://www.facebook.com/fringesalonwr/" aria-label="Visit Fringe Salon on Facebook">
-                                <img src="Images\Logos_Icons\icons8-facebook-100.png">
+                                <img src="Images/Logos_Icons/icons8-facebook-100.png" alt="instagram logo">
                             </a>
                         </li>
                     </ul>
                 </section>
-    
+
+                <!-- Address  -->
                 <section id="address">
                     <h2>Address</h2>
                     <address>
@@ -261,7 +327,8 @@
                         Warner Robins , GA 31088 <br>
                     </address>
                 </section>
-    
+
+                <!-- Contact Info  -->
                 <section id="contact_info">
                     <h2>Contact info</h2>
                     <address>
@@ -270,10 +337,11 @@
                         <a href="mailto:cassiebandy@gmail.com">cassiebandy@gmail.com</a> <br>
                     </address>
                 </section>
-    
+
+                <!-- Store Operation Hours  -->
                 <section id="hours">
                     <h2>Business hours</h2>
-    
+
                     <dl>
                         <dt>Tue-Sat</dt>
                         <dd>9am-7pm</dd>
@@ -282,14 +350,15 @@
                         <dt>Sun</dt>
                         <dd>Closed</dd>
                     </dl>
-    
+
                     <p>Walk-ins welcomed when availability allows.</p>
                     <p>Hours vary for each stylist.</p>
                 </section>
-    
+
+                <!-- Accepted Payment Methods  -->
                 <section id="payment">
                     <h2>Accepted payment</h2>
-    
+
                     <ul>
                         <li>Visa</li>
                         <li>Mastercard</li>
@@ -299,10 +368,11 @@
                         <li>Personal check</li>
                     </ul>
                 </section>
-    
+
+                <!-- Site Navigation links  -->
                 <nav id="site-nav">
                     <h2>Navigation</h2>
-    
+
                     <ul>
                         <li class="active"><a href="index.html">Home</a></li>
                         <li><a href="#About">About</a></li>
@@ -312,8 +382,8 @@
                         <li><a href="#Contact">Contact</a></li>
                     </ul>
                 </nav>
-    
 
+                <!-- Website Policies  -->
                 <nav id="policies-nav">
                     <h2>Policies</h2>
                     <ul>
@@ -324,12 +394,14 @@
                         <li><a href="https://policies.hibuwebsites.com/accessibility-statement" target="_blank">Website Accessibility Policy</a> </li>
                     </ul>
                 </nav>
-    
-                <div id="copywrite">
+
+                <!-- Copywrite Info and "Back to Top" Button -->
+                <div id="copywrite" class="x-padding-m">
                     <small>&copy; 2025 The content on this website is owned by us and our licensors. Do not copy any content (including images) without our consent.</small>
                         
+                    <!-- Button to Return User to Top of Page  -->
                     <button>
-                        <img src="Images\Logos_Icons\up-arrow-svgrepo-com.svg">
+                        <img src="Images/Logos_Icons/up-arrow-svgrepo-com.svg" alt="Go to top of page">
                     </button>
                 </div>
             </div>

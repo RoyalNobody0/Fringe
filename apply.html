@@ -10,14 +10,20 @@
         <link href="style.css" rel="stylesheet">
       </head>
 
-    <body id="apply-body">
-        <header id="app-header">
-            <h1>Join the<span class="break header-break">team</span></h1>
-            <p>Fill out the application form below to apply for any employment opportunities at Fringe Salon. Call us for more details.</p>
-            <div id="apply-img-container-header"></div>
+    <body id="app-body">
+        <header>
 
-            <div id="header-bar"> <!--Allows me to style and arrange the navbar seperate from the h1-->
-                <img id="header-logo" src="Images\Logos_Icons\Fringe_Logo_white.svg" alt="Fringe salon logo">
+            <!-- Header and Subheader Text  -->
+            <div id="app-header" class="padding-m">
+                <h1>Join the<span class="break large-break">team</span></h1>
+                <p>Fill out the application form below to apply for any employment opportunities at Fringe Salon. Call us for more details.</p>
+
+                <!-- Empty Div for Apply Image to be Placed in at Small Breakpoint  -->
+                <div id="apply-img-container-header"></div>
+            </div>
+
+            <div id="header-bar" class="dark-nav"> <!--Allows me to style and arrange the navbar seperate from the h1-->
+                <img id="header-logo" src="Images/Logos_Icons/Fringe_Logo_white.svg" alt="Fringe salon logo">
     
                 <nav>
                     <h2 class="sr-only">Main Navigation</h2> <!-- will be hidden -->
@@ -40,6 +46,8 @@
                                 <li><a href="apply.html">Apply Now</a></li>
                                 <li><a href="index.html#contact">Contact</a></li>
                             </ul>
+
+                            <!-- Social Media Links For the Dropdown Menu  -->
                             <ul class="social-links">
                                 <li>
                                     <a href="https://www.instagram.com/fringesalonwr?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Visit Fringe Salon on Instagram">
@@ -58,19 +66,26 @@
             </div>
         </header>
         <main>
-            <section id="app-form">
-                <h2 class="sr-only">Application</h2>
+            <!-- Application Form Section  -->
+            <section id="app-form" class="padding-m">
+                <h2 class="sr-only">Application</h2> <!--This will be hidden-->
+
+                <!-- Application Form  -->
                 <form>
-                <div id="input-fields">
+                    <!-- Contains All Fields Seperate to the Submit Button for Styling  -->
+                    <div id="input-fields">
+
+                        <!-- Name  -->
                         <label for="app-name">Name<span class="required">*</span></label>
                         <input type="text" name="app-name" id="app-name" autocomplete="given-name" placeholder="Your Name" required>
-        
+                        <!-- Email  -->
                         <label for="app-email">Email<span class="required">*</span></label>
                         <input type="email" name="app-email" id="app-email" autocomplete="email" placeholder="Email Address" required>
-
+                        <!-- Phone  -->
                         <label for="app-phone">Phone<span class="required">*</span></label>
-                        <input type="phone" name="app-phone" id="app-phone" autocomplete="phone" placeholder="Phone" required>
+                        <input type="tel" name="app-phone" id="app-phone" autocomplete="tel" placeholder="Phone" required>
     
+                        <!-- Preferred Contact method  -->
                         <fieldset>
                             <legend>Contact Method<span class="required">*</span></legend>
                             <label for="pref-email">
@@ -82,39 +97,48 @@
                                 <span class="radio-label">Phone</span>
                             </label>
                         </fieldset>
-        
+                        
+                        <!-- Desired Position  -->
                         <label for="position">Desired position<span class="required">*</span></label>
                         <input type="text" name="position" id="position" placeholder="Ex: stylist, apprentice, etc..." required>
     
                         <label for="myfile">Upload Resume:</label>
-                        <input type="file" id="myfile" name="myfile" value="resume"> 
+                        <input type="file" id="myfile" name="myfile"> 
                     </div>
+
+                    <!-- Empty Div for Apply Image to be Placed in at Large Breakpoint  -->
                     <div id="apply-img-container"></div>
-                    <input type="submit" name="mySubmit" id="mySubmit" value="Submit" class="bttn-style">
+                    <input type="submit" name="applySubmit" id="applySubmit" value="Submit" class="bttn-style">
                 </form>
             </section>
         </main>
 
-        <footer id="apply-footer">
-            <img src="Images\Logos_Icons\Fringe_Logo.svg" alt="Fringe salon logo">
+        <footer>
+            <img src="Images/Logos_Icons/Fringe_Logo.svg" alt="Fringe salon logo"> <!--Salon Logo-->
 
-            <div id="footer-bottom">
+            <!-- Footer Section Containing Store Info and Site Navigation  -->
+            <div id="footer-info" class="padding-m">
+
+                <!-- Social Links -->
                 <section id="socials">
                     <h2>Socials</h2>
+
+                    <!-- Link List of Images  -->
                     <ul>
-                        <li>
+                        <li> <!--Instagram Link-->
                             <a href="https://www.instagram.com/fringesalonwr?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Visit Fringe Salon on Instagram">
-                                <img src="Images\Logos_Icons\icons8-instagram-100.png">
+                                <img src="Images/Logos_Icons/icons8-instagram-100.png" alt="Instagram logo">
                             </a>
                         </li>
-                        <li>
+                        <li> <!--Facebook Link-->
                             <a href="https://www.facebook.com/fringesalonwr/" aria-label="Visit Fringe Salon on Facebook">
-                                <img src="Images\Logos_Icons\icons8-facebook-100.png">
+                                <img src="Images/Logos_Icons/icons8-facebook-100.png" alt="instagram logo">
                             </a>
                         </li>
                     </ul>
                 </section>
-    
+
+                <!-- Address  -->
                 <section id="address">
                     <h2>Address</h2>
                     <address>
@@ -123,7 +147,8 @@
                         Warner Robins , GA 31088 <br>
                     </address>
                 </section>
-    
+
+                <!-- Contact Info  -->
                 <section id="contact_info">
                     <h2>Contact info</h2>
                     <address>
@@ -132,10 +157,11 @@
                         <a href="mailto:cassiebandy@gmail.com">cassiebandy@gmail.com</a> <br>
                     </address>
                 </section>
-    
+
+                <!-- Store Operation Hours  -->
                 <section id="hours">
                     <h2>Business hours</h2>
-    
+
                     <dl>
                         <dt>Tue-Sat</dt>
                         <dd>9am-7pm</dd>
@@ -144,14 +170,15 @@
                         <dt>Sun</dt>
                         <dd>Closed</dd>
                     </dl>
-    
+
                     <p>Walk-ins welcomed when availability allows.</p>
                     <p>Hours vary for each stylist.</p>
                 </section>
-    
+
+                <!-- Accepted Payment Methods  -->
                 <section id="payment">
                     <h2>Accepted payment</h2>
-    
+
                     <ul>
                         <li>Visa</li>
                         <li>Mastercard</li>
@@ -161,10 +188,11 @@
                         <li>Personal check</li>
                     </ul>
                 </section>
-    
+
+                <!-- Site Navigation links  -->
                 <nav id="site-nav">
                     <h2>Navigation</h2>
-    
+
                     <ul>
                         <li class="active"><a href="index.html">Home</a></li>
                         <li><a href="#About">About</a></li>
@@ -174,8 +202,8 @@
                         <li><a href="#Contact">Contact</a></li>
                     </ul>
                 </nav>
-    
 
+                <!-- Website Policies  -->
                 <nav id="policies-nav">
                     <h2>Policies</h2>
                     <ul>
@@ -186,12 +214,14 @@
                         <li><a href="https://policies.hibuwebsites.com/accessibility-statement" target="_blank">Website Accessibility Policy</a> </li>
                     </ul>
                 </nav>
-    
-                <div id="copywrite">
+
+                <!-- Copywrite Info and "Back to Top" Button -->
+                <div id="copywrite" class="x-padding-m">
                     <small>&copy; 2025 The content on this website is owned by us and our licensors. Do not copy any content (including images) without our consent.</small>
                         
+                    <!-- Button to Return User to Top of Page  -->
                     <button>
-                        <img src="Images\Logos_Icons\up-arrow-svgrepo-com.svg">
+                        <img src="Images/Logos_Icons/up-arrow-svgrepo-com.svg" alt="Go to top of page">
                     </button>
                 </div>
             </div>
