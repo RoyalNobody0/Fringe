@@ -83,6 +83,9 @@ html{
 
 /* GENERAL STYLES */
 
+#body-container{
+    overflow-x: hidden;
+}
 
 h1, 
 h2,
