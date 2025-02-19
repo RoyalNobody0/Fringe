@@ -56,14 +56,13 @@ table {
 
 html{
     box-sizing: border-box;
-    overflow-x: hidden;
 }
 
 
 
 /* GLOBAL VARIABLES */
 
-* {
+:root {
     --header-font: "Playfair Display", serif;
     --main-font: "Roboto Condensed", sans-serif;
     --main-header-size: 2rem;
@@ -107,7 +106,8 @@ form{
 
 body{
     background-color: var(--light-bg);
-
+    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 
