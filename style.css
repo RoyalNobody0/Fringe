@@ -56,6 +56,9 @@ table {
 
 html{
     box-sizing: border-box;
+}
+
+html, body{
     overflow-x: hidden;
 }
 
@@ -83,9 +86,6 @@ html{
 
 /* GENERAL STYLES */
 
-#body-container{
-    overflow-x: hidden;
-}
 
 h1, 
 h2,
@@ -150,6 +150,10 @@ body{
 
 .x-padding-m{
     padding: 0 5vw;
+}
+
+.small-break{
+    font-size: var(--sub-header-size);
 }
 
 
@@ -218,8 +222,7 @@ body{
     list-style: none;
     padding: 10px;
     margin: 0;
-    display: flex;
-    flex-direction: column;
+    display: flex; flex-direction: column;
     justify-content: space-between;
     grid-row-start: 2;
 }
@@ -278,10 +281,6 @@ body{
     max-width: 200px;
 }
 
-.small-break{
-    font-size: var(--sub-header-size);
-}
-
 #hero p{
     padding-top: 10px;
     font-family: var(--header-font);
@@ -292,15 +291,15 @@ body{
 /* SERVICES SECTION  */
 
 #services{
+    position: relative; /* Will let me position #services-ul relative to this container */
     padding-top: 100px;
-    display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 200px 50px 1fr 1fr;
+    display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 200px 50px 100px 150px 1fr;
     grid-gap: 10px;
 }
 
 
 #services-img-container{
-    grid-row: 1 / span 2; /* positioning img container in grid */
-    grid-column: 2;
+    grid-row: 1 / span 2; grid-column: 2; /* positioning img container in grid */
     width: 100%;
     background-image: url('Images/services.jpg'); /*placing image in container */
     background-size: cover;
@@ -317,7 +316,7 @@ body{
 #services-ul{
     position:absolute; /* absolute positioning so it can overlap the picture */
     width: 60vw; /* responsive width */
-    top: 600PX;
+    top: 210px;
 }
 
 /* List styling */
@@ -336,10 +335,8 @@ body{
 
 /* Positioning */
 #specialties{
-    grid-row: 3; grid-column: 1 / span 2; /* spans across screen */
+    grid-row: 4; grid-column: 1 / span 2; /* spans across screen */
     border: 1px solid var(--green-accent);
-    margin-top: 15vh;
-    padding-bottom: 2vh;
 }
 
 #specialties h3{
@@ -360,8 +357,8 @@ body{
 
 /* Services Bottom Group Styling */
 #services-link-group{
-    grid-row-start: 4; /* positioning at bottom of section */ grid-column: 1 / span 2; /*stretches across page */
-    display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 160px .5fr; /* creates a 2x2 grid for it's elements to sit in */
+    grid-row-start: 5; /* positioning at bottom of section */ grid-column: 1 / span 2; /*stretches across page */
+    display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 160px .5fr; 
     row-gap: 10px; column-gap: 10px;
     /* keeps sectioned centered and a reasonable size for resposnivness  */
     max-width: 400px;
@@ -380,7 +377,6 @@ body{
 
 #services-link-group a + p{ /* styles the text about provided amnenities */
     text-align: center;
-    font-size: .8rem;
     grid-column: span 2; /* stretches across screen */
 }
 
@@ -413,8 +409,7 @@ body{
 /* Brands Section  */
 
 #brands{
-    display: grid;
-    grid-template-rows: 3fr 1fr 1fr; /* creates grid so that the image container has something to stretch to */
+    display: grid; grid-template-rows: 3fr 1fr 1fr; /* creates grid so that the image container has something to stretch to */
 }
 
 #brands-img-container{ /* responsive bg image that crops itself */
@@ -434,9 +429,7 @@ body{
     top: -30px;
 }
 
-#brands p{
-    margin-bottom: 15px;
-}
+
 
 #brands li{ /* brands list styling */
     font-family: var(--header-font);
