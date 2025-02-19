@@ -54,13 +54,6 @@ table {
 	border-spacing: 0;
 }
 
-html{
-    box-sizing: border-box;
-}
-
-html, body{
-    overflow-x: hidden;
-}
 
 
 
@@ -68,7 +61,7 @@ html, body{
 
 /* GLOBAL VARIABLES */
 
-:root {
+* {
     --header-font: "Playfair Display", serif;
     --main-font: "Roboto Condensed", sans-serif;
     --main-header-size: 2rem;
@@ -82,6 +75,7 @@ html, body{
     --green-accent: #747567;
     --gold-accent: #9e8c68;
     --dark-green: #333b2b;
+    overflow-x: hidden;
 }
 
 /* GENERAL STYLES */
@@ -179,6 +173,7 @@ body{
 .nav-wrapper {
     position: relative;
     grid-row-start: 1;
+    border: 2px solid red;
 }
 
 /* Hide checkbox */
@@ -233,7 +228,7 @@ body{
 
 .nav-links a {
     text-decoration: none;
-    font-size: var(--main-header-size);
+    font-size: var(--sub-header-size);
     font-weight: bold;
     transition: color 0.2s;
     color: var(--light-text);
