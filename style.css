@@ -56,13 +56,8 @@ table {
 
 html{
     box-sizing: border-box;
+    overflow-x: hidden;
 }
-
-html, body{
-    clip: rect(0, auto, auto, 0);
-}
-
-
 
 
 
