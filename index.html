@@ -4,23 +4,23 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0">
         <meta name="author" content="Savannah Raley">
-        <link rel="stylesheet" media="(min-width: 1000px)" href="styles.css">
-        <link rel="stylesheet" media="(min-width: 1920px)" href="styles.css">
         <title>Fringe Salon</title>
 
-        <link href="style.css" rel="stylesheet">
+        <link href="styles1.css" rel="stylesheet">
+        <script src="contactForm.js" defer></script>
+        <script src="global.js" defer></script>
       </head>
 
     <body>
         <header>
                 <!--The splash image with the h1-->
-            <section id="hero" class="padding-m">
+            <section id="hero" class="section-padding padding-top-l">
                 <h1>Modern <span class="break">sophistication,</span> <span class="break small-break">timeless style</span></h1> 
                 <p>Get that classic, high-end salon experience.</p>
             </section>
 
-            <div id="header-bar"> <!--Allows me to style and arrange the navbar seperate from the h1-->
-                <img id="header-logo" src="Images/Logos_Icons/Fringe_Logo_white.svg" alt="Fringe salon logo"> <!--Website logo-->
+            <div class="header-bar"> <!--Allows me to style and arrange the navbar seperate from the h1-->
+                <img id="header-logo" src="Images\Logos_Icons\logo_white.webp" alt="Fringe salon logo"> <!--Website logo-->
 
                 <nav>
                     <h2 class="sr-only">Main Navigation</h2> <!-- will be hidden -->
@@ -36,7 +36,7 @@
                 
                         <!-- Dropdown Menu -->
                         <div class="dropdown">
-                            <ul class="nav-links">
+                            <ul id="nav-links" class="flex column">
                                 <li class="active"><a href="index.html">Home</a></li>
                                 <li><a href="#about">About</a></li>
                                 <li><a href="schedule.html">Schedule Session</a></li>
@@ -46,7 +46,7 @@
                             </ul>
 
                             <!-- Social Media Links For the Dropdown Menu  -->
-                            <ul class="social-links">
+                            <ul class="social-links flex">
                                 <li>
                                     <a href="https://www.instagram.com/fringesalonwr?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Visit Fringe Salon on Instagram">
                                         <img src="Images/Logos_Icons/icons8-instagram-100.png" alt="Instagram">
@@ -66,7 +66,7 @@
 
         <main>
             <!-- Services  -->
-            <section id="services" class="padding-m">
+            <section id="services" class="section-padding padding-top-l">
                 <!-- Header and Subheader Text  -->
                 <div>
                     <h2>Services.</h2>
@@ -75,25 +75,25 @@
                 
                 <!-- Main List That will be Positioned Over Image  -->
                 <ul id="services-ul">
-                    <li>Waxing</li>
-                    <li>Makeup</li>
-                    <li>Boutique </li>
-                    <li>Hair</li>
+                    <li class="flex">Waxing</li>
+                    <li class="flex">Makeup</li>
+                    <li class="flex">Boutique </li>
+                    <li class="flex">Hair</li>
                 </ul>
 
                 <!-- Specialties List  -->
-                <section id="specialties" class="x-padding-m">
+                <section id="specialties">
                     <h3>Specialties</h3>
 
                     <ul>
-                        <li>Highlights</li>
-                        <li>Balayage</li>
-                        <li>Keratin smoothing</li>
-                        <li>Ombre technique</li>
-                        <li>Corrective color</li>
-                        <li>Chemical services</li>
-                        <li>Permanent waves</li>
-                        <li>Extensions</li>
+                        <li class="nowrap">Highlights</li>
+                        <li class="nowrap">Balayage</li>
+                        <li class="nowrap">Keratin smoothing</li>
+                        <li class="nowrap">Ombre technique</li>
+                        <li class="nowrap">Corrective color</li>
+                        <li class="nowrap">Chemical services</li>
+                        <li class="nowrap">Permanent waves</li>
+                        <li class="nowrap">Extensions</li>
 
                     </ul>
                 </section>
@@ -105,24 +105,24 @@
                 <!-- Will be placed into grid  -->
                 <div id="services-link-group">
                     <p>Once your look is complete, your stylist will provide precise after-care instructions so you can maintain that look for as long as possible.</p>
-                    <a class="circle-button" id="schedule" href="schedule.html">Book now</a> <!--Button to schedukle page-->
+                    <a class="circle-button flex" id="schedule" href="schedule.html">Book now</a> <!--Button to schedukle page-->
                     <p>Free Wi-Fi, coffee, and snacks are available during your visit.</p>
                 </div>
             </section>
 
             <!-- About Section Containing Defines and Brands Sections  -->
-            <section id="about" class="padding-m">
+            <section id="about">
                 <h2 class="sr-only">About</h2> <!--will be hidden-->
 
                 <!-- Defines Section  -->
-                <section id="defines" class="padding-m">
+                <section id="defines" class="section-padding flex column">
                     <h3>What defines us.</h3>
                     <p>Locally operated and owned by women, we excel at bringing big city glamor straight into the heart of Middle Georgia.</p>
                     <p>Our team proudly features stylists who have up to 20+ years of experience. All of our stylists continue to take classes and workshops so that they can stay on top of the latest trends in all things beauty and ensure you stay looking at the top of your game.</p>
                 </section>
                 
                 <!-- Brands Section  -->
-                <section id="brands" class="padding-m">
+                <section id="brands" class="section-padding padding-top-l">
                     <!-- Empty Div for Brands Image to Be Placed In  -->
                     <div id="brands-img-container"> 
                     </div>
@@ -132,41 +132,33 @@
 
                     <!-- Brands List -->
                     <ul> <!--spans will hold decorative lines-->
-                        <li>Aquage <span class="h-line"></span></li>
-                        <li>Wella <span class="h-line"></span></li>
-                        <li>Moroccan Oil <span class="h-line"></span></li>
-                        <li>GK Products <span class="h-line"></span></li>
-                        <li>Colorproof <span class="h-line"></span></li>
+                        <li class="flex nowrap">Aquage <span class="h-line"></span></li>
+                        <li class="flex nowrap">Wella <span class="h-line"></span></li>
+                        <li class="flex nowrap">Moroccan Oil <span class="h-line"></span></li>
+                        <li class="flex nowrap">GK Products <span class="h-line"></span></li>
+                        <li class="flex nowrap">Colorproof <span class="h-line"></span></li>
                     </ul>
                 </section>
             </section>
 
             <!-- Testimonial Section  -->
-            <section id="testimonial" class="padding-m">
+            <section id="testimonial" class="section-padding flex column">
                 <h2 class="sr-only">Customer Review</h2> <!--will be hidden-->
 
                 <!--this div will place the quote beside the quotation mark image-->
-                <div id="quote">
+                <div id="quote" class="flex">
                     <img src="Images/Logos_Icons/quote_mark.svg" alt=" "> <!--quotation mark img-->
                     <blockquote>
                         I couldn’t be happier with Fringe Salon. They are so professional and their service is the best in Warner Robins.
                     </blockquote>
                 </div>
-                <p>Ammy Pearson, <span class="break">Facebook Review</span></p> <!--Attribution-->
+                <p><span class="nowrap">Ammy Pearson,</span> <span class="break nowrap">Facebook Review</span></p> <!--Attribution-->
             </section>
 
             <!-- Instagram Gallery -->
-            <section id="gallery" class="padding-m">
+            <section id="gallery" class="flex column padding-top-l">
                 <h2>Instagram gallery.</h2>
 
-                <!-- Small Gallery Visible at Small Screen Sizes, Hidden at Large  -->
-                <div id="mobile-instagram">
-                    <!--script importing the instagram embed-->
-                    <script src="https://static.elfsight.com/platform/platform.js" async></script>
-                    <div class="elfsight-app-7941814e-d50e-4f12-ba11-6711a8ee0319" data-elfsight-app-lazy></div>
-                </div>
-
-                <!-- Large Gallery Visible at Large Screen Sizes, Hidden at Small  -->
                 <div id="desktop-instagram">
                     <script src="https://static.elfsight.com/platform/platform.js" async></script>
                     <div class="elfsight-app-4471d302-16ca-4f6f-9677-a7e4e82e4001" data-elfsight-app-lazy></div>
@@ -174,44 +166,51 @@
             </section>
         </main>
 
-        <footer>
-            <img src="Images/Logos_Icons/Fringe_Logo.svg" alt="Fringe salon logo"> <!--Salon Logo-->
+        <footer class="flex column">
+            <img src="Images\Logos_Icons\logo_gold.webp" alt="Fringe salon logo"> <!--Salon Logo-->
 
             <!-- Contact Section  -->
-            <section id="contact" class="padding-m">
+            <section id="contact" class="section-padding">
                 <h2>Contact us.</h2>
                 <p>Reach out with any comments or questions</p>
 
                 <!-- Contact Form  -->
-                <form>
+                <form id="contact-form" class="flex column">
                     <label for="name">Name<span class="required">*</span></label> <!--Name Input Label-->
+                    <p id="name-error" class="error hidden"></p>   <!--Where an error message will display-->
                     <input type="text" name="name" id="name" autocomplete="given-name" placeholder="Your Name" required> <!--Name Input -->
 
                     <label for="email">Email<span class="required">*</span></label> <!--Email Input Label-->
+                    <p id="email-error" class="error hidden"></p>   <!--Where an error message will display-->
                     <input type="email" name="email" id="email" autocomplete="email" placeholder="Email Address" required> <!--Email Input -->
 
                     <!-- Message Input Box -->
-                    <div id="comm">
+                    <div id="comm" class="flex column">
                         <label for="comments">Message us<span class="required">*</span></label> <!--Label for message input-->
-                        <textarea name="comments" id="comments" required>Tell us whats on your mind</textarea> <!--Message input-->
+                        <p id="comm-error" class="error hidden"></p>   <!--Where an error message will display-->
+                        <textarea name="comments" id="comments" placeholder="Tell us whats on your mind" required></textarea> <!--Message input-->
                     </div>
 
                     <input type="submit" name="contactSubmit" id="contactSubmit" value="Submit" class="bttn-style"> <!--Submit button-->
                 </form>
+                
 
                 <!-- Empty Div for Contact Image to Be Placed In  -->
                 <div id="contact-img-container"></div>
             </section>
 
+            <div id="sucessful-contact-submit">
+            </div>
+
             <!-- Footer Section Containing Store Info and Site Navigation  -->
-            <div id="footer-info" class="padding-m">
+            <div id="footer-info" class="section-padding">
 
                 <!-- Social Links -->
-                <section id="socials">
+                <section id="socials" class="flex">
                     <h2>Socials</h2>
 
                     <!-- Link List of Images  -->
-                    <ul>
+                    <ul class="flex">
                         <li> <!--Instagram Link-->
                             <a href="https://www.instagram.com/fringesalonwr?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Visit Fringe Salon on Instagram">
                                 <img src="Images/Logos_Icons/icons8-instagram-100.png" alt="Instagram logo">
@@ -236,7 +235,7 @@
                 </section>
 
                 <!-- Contact Info  -->
-                <section id="contact_info">
+                <section id="contact-info">
                     <h2>Contact info</h2>
                     <address>
                         Main: (478) 208-4053 <br>
@@ -301,16 +300,10 @@
                         <li><a href="https://policies.hibuwebsites.com/accessibility-statement" target="_blank">Website Accessibility Policy</a> </li>
                     </ul>
                 </nav>
-
-                <!-- Copywrite Info and "Back to Top" Button -->
-                <div id="copywrite" class="x-padding-m">
+                <section id="copywrite" class="x-section-padding">
                     <small>&copy; 2025 The content on this website is owned by us and our licensors. Do not copy any content (including images) without our consent.</small>
-                        
-                    <!-- Button to Return User to Top of Page  -->
-                    <button>
-                        <img src="Images/Logos_Icons/up-arrow-svgrepo-com.svg" alt="Go to top of page">
-                    </button>
-                </div>
+                    <small><a href="attribute.html">Image attributions</a></small>
+                </section>    
             </div>
         </footer>
     </body>

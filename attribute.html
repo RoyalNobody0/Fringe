@@ -1,31 +1,24 @@
-<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0">
         <meta name="author" content="Savannah Raley">
-        <title>Apply</title>
+        <title>Image Attributions</title>
 
         <link href="styles1.css" rel="stylesheet">
-        <script src="applyForm.js" defer></script>
+
       </head>
 
-    <body id="app-body">
+    <body>
         <header>
-            <!-- Header and Subheader Text  -->
-            <div id="app-header" class="section-padding padding-top-l">
-                <h1>Join the<span class="break large-break">team</span></h1>
-                <p>Fill out the application form below to apply for any employment opportunities at Fringe Salon. Call us for more details.</p>
+            <h1 class="section-padding padding-top-l">Image attributions</h1> 
 
-                <!-- Empty Div for Apply Image to be Placed in at Small Breakpoint  -->
-                <div id="apply-img-container-header"></div>
-            </div>
+            <div class="header-bar dark-nav"> <!--Allows me to style and arrange the navbar seperate from the h1-->
+                <img id="header-logo" src="Images\Logos_Icons\logo_white.webp" alt="Fringe salon logo"> <!--Website logo-->
 
-            <div class="dark-nav header-bar"> <!--Allows me to style and arrange the navbar seperate from the h1-->
-                <img id="header-logo" src="Images\Logos_Icons\logo_white.webp" alt="Fringe salon logo">
-    
                 <nav>
                     <h2 class="sr-only">Main Navigation</h2> <!-- will be hidden -->
+                    
                     <div class="nav-wrapper">
                         <!-- Hidden Checkbox -->
                         <input type="checkbox" id="menu-toggle" class="menu-checkbox">
@@ -39,11 +32,11 @@
                         <div class="dropdown">
                             <ul id="nav-links" class="flex column">
                                 <li><a href="index.html">Home</a></li>
-                                <li><a href="index.html#about">About</a></li>
+                                <li><a href="#about">About</a></li>
                                 <li><a href="schedule.html">Schedule Session</a></li>
-                                <li><a href="index.html#gallery">Gallery</a></li>
-                                <li class="active"><a href="apply.html">Apply Now</a></li>
-                                <li><a href="index.html#contact">Contact</a></li>
+                                <li><a href="#gallery">Gallery</a></li>
+                                <li><a href="apply.html">Apply Now</a></li>
+                                <li><a href="#contact">Contact</a></li>
                             </ul>
 
                             <!-- Social Media Links For the Dropdown Menu  -->
@@ -64,56 +57,56 @@
                 </nav>
             </div>
         </header>
+
         <main>
-            <!-- Application Form Section  -->
-            <section id="app-form" class="section-padding">
-                <h2 class="sr-only">Application</h2> <!--This will be hidden-->
+            <section id="icons" class="section-padding">
+                <h2>Icons</h2>
+                <figure class="icon attr flex column">
+                    <img src="Images/Logos_Icons/icons8-hamburger-menu-50(1).png" alt="Hamburger icon">
+                    <figcaption>
+                        <h3>Hamburger Icon</h3>
+                        <a target="_blank" href="https://icons8.com/icon/3096/menu">Hamburger Menu</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                    </figcaption>
+                </figure>
+                <figure class="icon attr flex column">
+                    <img src="Images/Logos_Icons/icons8-instagram-100.png" alt="Instagram logo">
+                    <figcaption>
+                        <h3>Instagram logo</h3>
+                        <a target="_blank" href="https://icons8.com/icon/32309/instagram">Instagram</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                    </figcaption>
+                </figure>
+                <figure class="icon attr flex column">
+                    <img src="Images/Logos_Icons/icons8-facebook-100.png" alt="Facebook logo">
+                    <figcaption>
+                        <h3>Facebook logo</h3>
+                        <a target="_blank" href="https://icons8.com/icon/8818/facebook">Facebook</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                    </figcaption>
+                </figure>
+            </section>
 
-                <!-- Application Form  -->
-                <form id="apply-form" class="flex column">
-                    <!-- Contains All Fields Seperate to the Submit Button for Styling  -->
-                    <div id="input-fields" class="flex column">
-
-                        <!-- Name  -->
-                        <label for="name">Name<span class="required">*</span></label>
-                        <p id="name-error" class="error hidden"></p>   <!--Where an error message will display-->
-                        <input type="text" name="name" id="name" autocomplete="given-name" placeholder="Your Name" required>
-                        <!-- Email  -->
-                        <label for="email">Email<span class="required">*</span></label>
-                        <p id="email-error" class="error hidden"></p>   <!--Where an error message will display-->
-                        <input type="email" name="email" id="email" autocomplete="email" placeholder="Email Address" required>
-                        <!-- Phone  -->
-                        <label for="phone">Phone<span class="required">*</span></label>
-                        <p id="phone-error" class="error hidden"></p>   <!--Where an error message will display-->
-                        <input type="tel" name="phone" id="phone" autocomplete="tel" placeholder="Phone" required>
-    
-                        <!-- Preferred Contact method  -->
-                        <fieldset class="flex">
-                            <legend>Contact Method<span class="required">*</span></legend>
-                            <label for="pref-email" class="form-control">
-                                <input type="radio" name="contactPref" id="pref-email" checked>
-                                <span class="radio-label">Email</span>
-                            </label>
-                            <label for="pref-phone" class="form-control">
-                                <input type="radio" name="contactPref" id="pref-phone">
-                                <span class="radio-label">Phone</span>
-                            </label>
-                        </fieldset>
-                        
-                        <!-- Desired Position  -->
-                        <label for="position">Desired position<span class="required">*</span></label>
-                        <p id="pos-error" class="error hidden"></p>   <!--Where an error message will display-->
-                        <input type="text" name="position" id="position" placeholder="Ex: stylist, apprentice, etc..." required>
-    
-                        <label for="myfile">Upload Resume:</label>
-                        <input type="file" id="myfile" name="myfile"> 
-                    </div>
-                    <input type="submit" name="applySubmit" id="applySubmit" value="Submit" class="bttn-style">
-                    <!-- Empty Div for Apply Image to be Placed in at Large Breakpoint  -->
-                    <div id="apply-img-container"></div>
-                    <div id="sucessful-apply-submit">
-                    </div>
-                </form>
+            <section id="images" class="section-padding">
+                <h2>Stock Images</h2>
+                <figure class="atrribute-image attr flex column">
+                    <img src="Images\services.jpg" alt="woman in teal and white top outdoors.">
+                   <figcaption>
+                    <h3>Services Section Background Image</h3>
+                    Photo by <a href="https://unsplash.com/@seteph?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Allef Vinicius</a> on <a href="https://unsplash.com/photos/woman-in-teal-and-white-top-outdoor-NYHvtXLNYyY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+                   </figcaption>
+                </figure>
+                <figure class="atrribute-image attr flex column">
+                    <img src="Images\defines_img.jpg" alt="A woman wearing white off-shoulder crop top standing beside concrete building under clear blue sky.">
+                   <figcaption>
+                    <h3>Defines Section Background Image</h3>
+                    Photo by <a href="https://unsplash.com/@_maxxmiller?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Maxx Miller</a> on <a href="https://unsplash.com/photos/photo-of-woman-wearing-white-off-shoulder-crop-top-standing-beside-concrete-building-under-clear-blue-sky-fjwBfnHYNBM?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+                   </figcaption>
+                </figure>
+                <figure class="atrribute-image attr flex column">
+                    <img src="Images\hero.jpg" alt="woman wearing white shirt standing outside under a bright blue sky with a city in the background.">
+                   <figcaption>
+                    <h3>Hero Section Background Image</h3>
+                    Photo by <a href="https://unsplash.com/@armedshutter?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Ayo Ogunseinde</a> on <a href="https://unsplash.com/photos/woman-wearing-white-shirt-standing-RrD8ypt8cjY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+                   </figcaption>
+                </figure>
             </section>
         </main>
 
@@ -136,7 +129,7 @@
                         </li>
                         <li> <!--Facebook Link-->
                             <a href="https://www.facebook.com/fringesalonwr/" aria-label="Visit Fringe Salon on Facebook">
-                                <img src="Images/Logos_Icons/icons8-facebook-100.png" alt="instagram logo">
+                                <img src="Images/Logos_Icons/icons8-facebook-100.png" alt="Facebook logo">
                             </a>
                         </li>
                     </ul>
@@ -218,11 +211,10 @@
                         <li><a href="https://policies.hibuwebsites.com/accessibility-statement" target="_blank">Website Accessibility Policy</a> </li>
                     </ul>
                 </nav>
-
                 <section id="copywrite" class="x-section-padding">
                     <small>&copy; 2025 The content on this website is owned by us and our licensors. Do not copy any content (including images) without our consent.</small>
                     <small><a href="attribute.html">Image attributions</a></small>
-                </section>  
+                </section>    
             </div>
         </footer>
     </body>
