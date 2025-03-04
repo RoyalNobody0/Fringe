@@ -86,7 +86,7 @@ function validateForm(event){
 
         //Adds text and classes to created elements
         messageH2.textContent = "Thank you for your message"
-        messageP.textContent = "We have recieved your message and will be in contact with you soon."
+        messageP.textContent = `We have recieved your message, ${customer.name} and will be in contact with you soon.`
         innerDiv.classList.add("inner-box", "padding-m")
         outerDiv.classList.add("outer-box")
 
